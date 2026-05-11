@@ -1,0 +1,27 @@
+{
+  "name": "onto-learning-materials",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lilirg/onto-learning-materials.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lilirg/onto-learning-materials/issues"
+  },
+  "homepage": "https://github.com/lilirg/onto-learning-materials#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
