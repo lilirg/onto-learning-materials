@@ -8,6 +8,7 @@ hero:
   image:
     src: /logo.svg
     alt: Ontology Learning Materials
+    height: 160px
   actions:
     - theme: brand
       text: 开始学习
@@ -47,8 +48,6 @@ features:
 <div class="stat-label">核心章节</div>
 </div>
 <div class="stat-card">
-<div class="stat-value">7</div>
-<div class="stat-label">实用附录</div>
 <div class="stat-value">8</div>
 <div class="stat-label">知识模块</div>
 </div>
@@ -390,6 +389,8 @@ graph LR
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .module-card:hover {
@@ -412,11 +413,6 @@ graph LR
   height: 3px;
   background: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
   border-radius: 12px 12px 0 0;
-}
-
-.module-card {
-  position: relative;
-  overflow: hidden;
 }
 
 .module-number {
