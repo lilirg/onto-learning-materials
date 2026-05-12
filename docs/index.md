@@ -337,13 +337,13 @@ features:
 
 | 附录 | 内容 |
 |------|------|
-| 附录 A | [OWL 2 属性速查表](/appendix-a-owl2-reference) |
-| 附录 B | [Protégé 常用快捷键](/appendix-b-protoge-shortcuts) |
-| 附录 C | [常用本体仓库与资源](/appendix-c-repositories) |
-| 附录 D | [RDF/XML 与 Turtle 语法对照](/appendix-d-rdf-syntax-comparison) |
-| 附录 E | [Pizza Ontology 教程指引](/appendix-e-pizza-tutorial) |
-| 附录 F | [Protégé 教程资源索引](/appendix-f-protege-resources) |
-| 附录 G | [术语中英对照表](/appendix-g-glossary) |
+| 附录 A | [OWL 2 属性速查表](/appendix-a-owl2-reference/) |
+| 附录 B | [Protégé 常用快捷键](/appendix-b-protoge-shortcuts/) |
+| 附录 C | [常用本体仓库与资源](/appendix-c-repositories/) |
+| 附录 D | [RDF/XML 与 Turtle 语法对照](/appendix-d-rdf-syntax-comparison/) |
+| 附录 E | [Pizza Ontology 教程指引](/appendix-e-pizza-tutorial/) |
+| 附录 F | [Protégé 教程资源索引](/appendix-f-protege-resources/) |
+| 附录 G | [术语中英对照表](/appendix-g-glossary/) |
 
 ## 学习方法
 

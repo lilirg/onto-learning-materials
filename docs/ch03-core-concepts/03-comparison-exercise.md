@@ -5,7 +5,8 @@
 ### 用 RDFS 分别建模"学科分类表"与"学科关系本体"
 
 **分类法示例：**
-```rdf
+
+```turtle
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix : <http://example.org/classification#> .
 
@@ -15,7 +16,8 @@
 ```
 
 **本体示例：**
-```rdf
+
+```turtle
 @prefix : <http://example.org/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 
