@@ -28,461 +28,242 @@ features:
     details: 使用 Protégé 工具动手实践，每章配备练习实例
 ---
 
+<style>
+.vp-hero .VPHero .container {
+  max-width: 900px;
+}
+.vp-hero .VPHero .main {
+  padding-top: 1rem;
+}
+</style>
+
 <div id="modules"></div>
+
+## 课程概览
+
+本课程是一套面向零基础学习者的系统性本体工程教材，深入讲解 W3C 语义网标准体系。内容从哲学基础出发，逐步深入到实际建模，涵盖理论知识、工具操作与实践练习，帮助读者循序渐进地掌握本体工程的核心知识与实践技能。
+
+### 📐 知识体系地图
+
+```mermaid
+graph LR
+    A[模块一：理论基石<br/>哲学 · 概念 · 本体类型] --> B[模块二：RDF 数据模型<br/>三元组 · 资源 · 命名空间]
+    B --> C[模块三：RDFS & SKOS<br/>分类 · 词汇 · 层次]
+    C --> D[模块四：OWL 2 核心<br/>描述逻辑 · 公理 · 约束]
+    D --> E[模块五：推理与验证<br/>SPARQL 查询 · SHACL · 推理]
+    E --> F[模块六：工程方法<br/>生命周期 · 方法论 · 质量]
+    F --> G[模块七：应用生态<br/>顶层本体 · 场景 · 工具]
+    G --> H[模块八：专家进阶<br/>本体对齐 · 神经符号 AI]
+
+    style A fill:#e3f2fd,color:#000
+    style B fill:#e8f5e9,color:#000
+    style C fill:#fff3e0,color:#000
+    style D fill:#f3e5f5,color:#000
+    style E fill:#e0f2f1,color:#000
+    style F fill:#fce4ec,color:#000
+    style G fill:#fff8e1,color:#000
+    style H fill:#efebe9,color:#000
+```
+
+### 📊 课程统计
+
+| 指标 | 数值 |
+|------|------|
+| 核心章节 | 23 章 |
+| 实战附录 | 7 个 |
+| 涵盖标准 | W3C RDF 1.1 / OWL 2 / SPARQL 1.1 / SHACL |
+| 实践工具 | Protégé, Jena, Zazuko |
+
+---
 
 ## 课程结构
 
 本课程共 **8 大模块**、23 章核心内容 + 7 个实用附录。
 
-<!-- 模块一 -->
-<div class="module-section">
-<div class="module-header">
-<span class="module-badge">模块一</span>
-<h3>理论与哲学基础</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 1 章 什么是本体</div>
-<div class="module-item-links">
-<a href="/ch01-what-is-ontology/01-overview">1.1 概述</a>
-<a href="/ch01-what-is-ontology/02-definition">1.2 定义与概念</a>
-<a href="/ch01-what-is-ontology/03-ontology-vs">1.3 本体与其他概念对比</a>
-<a href="/ch01-what-is-ontology/04-applications">1.4 应用场景</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 2 章 哲学渊源与概念化</div>
-<div class="module-item-links">
-<a href="/ch02-philosophy-conceptualization/01-philosophical-roots">2.1 哲学根源</a>
-<a href="/ch02-philosophy-conceptualization/02-conceptualization">2.2 概念化过程</a>
-<a href="/ch02-philosophy-conceptualization/03-exercises">2.3 练习</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 3 章 核心概念</div>
-<div class="module-item-links">
-<a href="/ch03-core-concepts/01-elements">3.1 基本元素</a>
-<a href="/ch03-core-concepts/02-ontology-types">3.2 本体类型</a>
-<a href="/ch03-core-concepts/03-comparison-exercise">3.3 对比与练习</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+### 🔹 模块一：理论与哲学基础
 
-<!-- 模块二 -->
-<div class="module-section">
-<div class="module-header">
-<span class="module-badge">模块二</span>
-<h3>RDF 数据模型</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 4 章 RDF 数据模型</div>
-<div class="module-item-links">
-<a href="/ch04-rdf-data-model/01-rdf-introduction">4.1 RDF 简介</a>
-<a href="/ch04-rdf-data-model/02-resources-statements">4.2 资源与语句</a>
-<a href="/ch04-rdf-data-model/03-rdf11-standard">4.3 RDF 1.1 标准</a>
-<a href="/ch04-rdf-data-model/04-practice-editor">4.4 实践：编辑器练习</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 5 章 RDF 语法格式</div>
-<div class="module-item-links">
-<a href="/ch05-rdf-syntax/01-serialization-overview">5.1 序列化概述</a>
-<a href="/ch05-rdf-syntax/02-turtle-syntax">5.2 Turtle 语法</a>
-<a href="/ch05-rdf-syntax/03-n-quads-jsonld">5.3 N-Quads 与 JSON-LD</a>
-<a href="/ch05-rdf-syntax/04-validation-exercise">5.4 验证与练习</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+本模块奠定本体工程的思想根基，理解"什么是知识"和"如何对世界进行分类"。
 
-<!-- 模块三 -->
-<div class="module-section">
-<div class="module-header">
-<span class="module-badge">模块三</span>
-<h3>RDFS 与 SKOS</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 6 章 RDFS 核心概念</div>
-<div class="module-item-links">
-<a href="/ch06-rdfs-core/01-rdf-vocabulary">6.1 RDF 词汇表</a>
-<a href="/ch06-rdfs-core/02-subclass-subproperty">6.2 子类与子属性</a>
-<a href="/ch06-rdfs-core/03-domain-range">6.3 域与范围</a>
-<a href="/ch06-rdfs-core/04-rdfs-limits">6.4 RDFS 局限性</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 7 章 SKOS 词汇构造</div>
-<div class="module-item-links">
-<a href="/ch07-skos-vocabulary/01-skos-introduction">7.1 SKOS 简介</a>
-<a href="/ch07-skos-vocabulary/02-concept-schemes">7.2 概念体系</a>
-<a href="/ch07-skos-vocabulary/03-labels-relations">7.3 标签与关系</a>
-<a href="/ch07-skos-vocabulary/04-exercise-topic-thesaurus">7.4 主题词表练习</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 1 章 | [什么是本体](/ch01-what-is-ontology/01-overview) | 本体定义、与数据库/术语表的差异、应用领域 |
+| 第 2 章 | [哲学渊源与概念化](/ch02-philosophy-conceptualization/01-philosophical-roots) | 从亚里士多德分类到现代概念化方法 |
+| 第 3 章 | [核心概念](/ch03-core-concepts/01-elements) | 类、实例、属性、公理四大基本元素 |
 
-<!-- 模块四 -->
-<div class="module-section">
-<div class="module-header">
-<span class="module-badge">模块四</span>
-<h3>OWL 2 核心</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 8 章 OWL 2 概述</div>
-<div class="module-item-links">
-<a href="/ch08-owl2-overview/01-why-owl2">8.1 为什么需要 OWL 2</a>
-<a href="/ch08-owl2-overview/02-owl2-profiles">8.2 OWL 2 概要</a>
-<a href="/ch08-owl2-overview/03-description-logic">8.3 描述逻辑</a>
-<a href="/ch08-owl2-overview/04-owa-cwa-tbox-abox">8.4 OWA/CWA/TBox/ABox</a>
-<a href="/ch08-owl2-overview/05-owl2-new-features">8.5 OWL 2 新功能</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 9 章 Protégé 入门</div>
-<div class="module-item-links">
-<a href="/ch09-protoge-intro/01-protoge-introduction">9.1 Protégé 简介</a>
-<a href="/ch09-protoge-intro/02-installation-creation">9.2 安装与创建</a>
-<a href="/ch09-protoge-intro/03-classes-properties">9.3 类与属性</a>
-<a href="/ch09-protoge-intro/04-exercise-movie-ontology">9.4 电影本体练习</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 10 章 OWL 2 类建模</div>
-<div class="module-item-links">
-<a href="/ch10-owl2-class-modeling/01-class-expressions">10.1 类表达式</a>
-<a href="/ch10-owl2-class-modeling/02-equivalent-disjoint">10.2 等价与不相交</a>
-<a href="/ch10-owl2-class-modeling/03-set-operations">10.3 集合运算</a>
-<a href="/ch10-owl2-class-modeling/04-protoge-exercise">10.4 练习</a>
-<a href="/ch10-owl2-class-modeling/05-reasoning-class-person">10.5 推理：类与类表达式</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 11 章 OWL 2 属性公理</div>
-<div class="module-item-links">
-<a href="/ch11-owl2-property-axioms/01-object-data-properties">11.1 对象属性与数据属性</a>
-<a href="/ch11-owl2-property-axioms/02-property-features">11.2 属性特性</a>
-<a href="/ch11-owl2-property-axioms/03-property-hierarchy-chain">11.3 属性层次与链</a>
-<a href="/ch11-owl2-property-axioms/04-exercise-property-axioms">11.4 属性公理练习</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 12 章 OWL 2 数据约束</div>
-<div class="module-item-links">
-<a href="/ch12-owl2-data-constraints/01-cardinality-constraints">12.1 基数约束</a>
-<a href="/ch12-owl2-data-constraints/02-value-constraints">12.2 值约束</a>
-<a href="/ch12-owl2-data-constraints/03-datatype-constraints">12.3 数据类型约束</a>
-<a href="/ch12-owl2-data-constraints/04-comprehensive-exercise">12.4 综合练习</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+### 🔹 模块二：RDF 数据模型
 
-<!-- 模块五 -->
-<div class="module-section">
-<div class="module-header">
-<span class="module-badge">模块五</span>
-<h3>推理与验证</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 13 章 SPARQL 查询语言</div>
-<div class="module-item-links">
-<a href="/ch13-sparql-query/01-sparql-introduction">13.1 SPARQL 简介</a>
-<a href="/ch13-sparql-query/02-basic-graph-patterns">13.2 基本图模式</a>
-<a href="/ch13-sparql-query/03-advanced-features">13.3 高级特性</a>
-<a href="/ch13-sparql-query/04-practice-dbpedia-sesame">13.4 实践：DBpedia 查询</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 14 章 SHACL 约束验证</div>
-<div class="module-item-links">
-<a href="/ch14-shacl-validation/01-shacl-introduction">14.1 SHACL 简介</a>
-<a href="/ch14-shacl-validation/02-shape-definition">14.2 形状定义</a>
-<a href="/ch14-shacl-validation/03-complex-rules">14.3 复杂规则</a>
-<a href="/ch14-shacl-validation/04-protoge-jena-exercise">14.4 Protégé + Jena 练习</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 15 章 OWL 推理与一致性</div>
-<div class="module-item-links">
-<a href="/ch15-reasoning-consistency/01-reasoning-basics">15.1 推理基础</a>
-<a href="/ch15-reasoning-consistency/02-reasoner-tools">15.2 推理器工具</a>
-<a href="/ch15-reasoning-consistency/03-inference-tasks">15.3 推理任务</a>
-<a href="/ch15-reasoning-consistency/04-protoge-reasoner-exercise">15.4 Protégé 推理练习</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+RDF（Resource Description Framework）是语义网的数据基石。本模块系统讲解如何描述和建模知识。
 
-<!-- 模块六 -->
-<div class="module-section">
-<div class="module-header">
-<span class="module-badge">模块六</span>
-<h3>本体工程方法</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 16 章 本体开发生命周期</div>
-<div class="module-item-links">
-<a href="/ch16-development-lifecycle/01-lifecycle-phases">16.1 生命周期阶段</a>
-<a href="/ch16-development-lifecycle/02-tools-deliverables">16.2 工具与交付物</a>
-<a href="/ch16-development-lifecycle/03-practice-bookstore-ontology">16.3 书店本体练习</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 17 章 主流方法论</div>
-<div class="module-item-links">
-<a href="/ch17-methodologies-comparison/01-methontology">17.1 METHONTOLOGY</a>
-<a href="/ch17-methodologies-comparison/02-neon-methodology">17.2 NeOn 方法论</a>
-<a href="/ch17-methodologies-comparison/03-agile-ontology-modeling">17.3 敏捷本体建模</a>
-<a href="/ch17-methodologies-comparison/04-comparison-table">17.4 方法论比较</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 18 章 本体质量评估</div>
-<div class="module-item-links">
-<a href="/ch18-quality-assessment/01-evaluation-dimensions">18.1 评估维度</a>
-<a href="/ch18-quality-assessment/02-automation-tools">18.2 自动化工具</a>
-<a href="/ch18-quality-assessment/03-practice-ontometrics">18.3 Ontometrics 实践</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 4 章 | [RDF 数据模型](/ch04-rdf-data-model/01-rdf-introduction) | 三元组模型、图结构、W3C 标准模型 |
+| 第 5 章 | [RDF 语法格式](/ch05-rdf-syntax/01-serialization-overview) | Turtle、N-Triples、JSON-LD 序列化对比与校验 |
 
-<!-- 模块七 -->
-<div class="module-section">
-<div class="module-header">
-<span class="module-badge">模块七</span>
-<h3>应用与工具生态</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 19 章 主流本体赏析</div>
-<div class="module-item-links">
-<a href="/ch19-mainstream-ontologies/01-upper-ontologies">19.1 顶层本体</a>
-<a href="/ch19-mainstream-ontologies/02-mid-level-ontologies">19.2 中等层次本体</a>
-<a href="/ch19-mainstream-ontologies/03-domain-ontologies">19.3 领域本体</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 20 章 典型应用场景</div>
-<div class="module-item-links">
-<a href="/ch20-application-scenarios/01-biomedicine">20.1 生物医学</a>
-<a href="/ch20-application-scenarios/02-search-qa">20.2 搜索与问答</a>
-<a href="/ch20-application-scenarios/03-enterprise-management">20.3 企业管理</a>
-<a href="/ch20-application-scenarios/04-kg-vs-ontology">20.4 知识图谱与本体</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 21 章 工具生态全景</div>
-<div class="module-item-links">
-<a href="/ch21-tool-ecosystem/01-editors">21.1 编辑器</a>
-<a href="/ch21-tool-ecosystem/02-reasoners">21.2 推理器</a>
-<a href="/ch21-tool-ecosystem/03-triplestores">21.3 三元组存储</a>
-<a href="/ch21-tool-ecosystem/04-research-platforms">21.4 研究平台</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+### 🔹 模块三：RDFS 与 SKOS
 
-<!-- 模块八（选学） -->
-<div class="module-section">
-<div class="module-header optional">
-<span class="module-badge optional">模块八（选学）</span>
-<h3>专家进阶</h3>
-</div>
-<div class="module-content">
-<div class="module-list">
-<div class="module-item">
-<div class="module-item-title">第 22 章 本体对齐与融合</div>
-<div class="module-item-links">
-<a href="/ch22-ontology-alignment/01-concepts">22.1 概念与方法</a>
-<a href="/ch22-ontology-alignment/02-alignment-methods">22.2 对齐方法</a>
-<a href="/ch22-ontology-alignment/03-tools-cases">22.3 工具与案例</a>
-</div>
-</div>
-<div class="module-item">
-<div class="module-item-title">第 23 章 神经符号融合与 AI</div>
-<div class="module-item-links">
-<a href="/ch23-neuro-symbolic-ai/01-symbolic-Neuro-comparison">23.1 符号与神经对比</a>
-<a href="/ch23-neuro-symbolic-ai/02-kg-embeddings">23.2 知识图谱嵌入</a>
-<a href="/ch23-neuro-symbolic-ai/03-neurosymbolic-integration">23.3 神经符号集成</a>
-<a href="/ch23-neuro-symbolic-ai/04-llm-kg">23.4 LLM 与知识图谱</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+在 RDF 基础上构建层次和词汇体系。
 
-## 附录
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 6 章 | [RDFS 核心概念](/ch06-rdfs-core/01-rdf-vocabulary) | 类层次 (`rdfs:subClassOf`)、属性域与范围 |
+| 第 7 章 | [SKOS 词汇构造](/ch07-skos-vocabulary/01-skos-introduction) | 概念体系、标签管理、主题词表实践 |
 
-| 附录 | 内容 |
-|------|------|
-| 附录 A | [OWL 2 属性速查表](/appendix-a-owl2-reference/) |
-| 附录 B | [Protégé 常用快捷键](/appendix-b-protoge-shortcuts/) |
-| 附录 C | [常用本体仓库与资源](/appendix-c-repositories/) |
-| 附录 D | [RDF/XML 与 Turtle 语法对照](/appendix-d-rdf-syntax-comparison/) |
-| 附录 E | [Pizza Ontology 教程指引](/appendix-e-pizza-tutorial/) |
-| 附录 F | [Protégé 教程资源索引](/appendix-f-protege-resources/) |
-| 附录 G | [术语中英对照表](/appendix-g-glossary/) |
+### 🔹 模块四：OWL 2 核心
 
-## 学习方法
+OWL 2 是最强大的语义网本体语言。本模块深入其逻辑基础和建模技巧。
 
-- **建议按模块顺序学习**，逐步建立完整的知识体系
-- **模块八为进阶选学内容**，可根据需要选修
-- **附录部分**提供参考资料和实用工具指南，可作为查阅手册使用
-- **实践建议**：在学习 OWL 2 与 Protégé 相关内容时，建议配合实际操作
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 8 章 | [OWL 2 概述](/ch08-owl2-overview/01-why-owl2) | 描述逻辑、OWL 概要、OWA 与 CWA |
+| 第 9 章 | [Protégé 入门](/ch09-protoge-intro/01-protoge-introduction) | 工具安装、本体创建与基础建模实践 |
+| 第 10 章 | [OWL 2 类建模](/ch10-owl2-class-modeling/01-class-expressions) | 类表达式、等价/不相交、推理 |
+| 第 11 章 | [OWL 2 属性公理](/ch11-owl2-property-axioms/01-object-data-properties) | 对象属性、数据属性、传递/逆属性 |
+| 第 12 章 | [OWL 2 数据约束](/ch12-owl2-data-constraints/01-cardinality-constraints) | 基数约束、值域、数据类型限制 |
+
+### 🔹 模块五：推理与验证
+
+学习如何使用查询语言和验证机制提取及确保知识质量。
+
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 13 章 | [SPARQL 查询语言](/ch13-sparql-query/01-sparql-introduction) | 基本图模式、高级查询与数据集 |
+| 第 14 章 | [SHACL 约束验证](/ch14-shacl-validation/01-shacl-introduction) | 形状定义、复杂约束条件 |
+| 第 15 章 | [OWL 推理与一致性](/ch15-reasoning-consistency/01-reasoning-basics) | 推理机制、一致性检查、分类器工具 |
+
+### 🔹 模块六：本体工程方法
+
+关注本体开发的工程化方法论和质量保障。
+
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 16 章 | [本体开发生命周期](/ch16-development-lifecycle/01-lifecycle-phases) | 需求→概念化→形式化→评估→维护 |
+| 第 17 章 | [主流方法论](/ch17-methodologies-comparison/01-methontology) | METHONTOLOGY, NeOn, Agile 比较 |
+| 第 18 章 | [本体质量评估](/ch18-quality-assessment/01-evaluation-dimensions) | 评估维度、Ontometrics、自动化工具 |
+
+### 🔹 模块七：应用与工具生态
+
+了解本体在实际领域中的应用实践以及工具全景。
+
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 19 章 | [主流本体赏析](/ch19-mainstream-ontologies/01-upper-ontologies) | BFO, CYC, SAREF, FIBO 等经典本体 |
+| 第 20 章 | [典型应用场景](/ch20-application-scenarios/01-biomedicine) | 生物医学、搜索引擎、企业管理 |
+| 第 21 章 | [工具生态全景](/ch21-tool-ecosystem/01-editors) | 编辑器、推理器、三元组数据库 |
+
+### 🔹 模块八（选学）：专家进阶
+
+深入学习本体对齐、融合及神经符号 AI 前沿话题。
+
+| 章节 | 主题 | 内容概要 |
+|:----:|------|----------|
+| 第 22 章 | [本体对齐与融合](/ch22-ontology-alignment/01-concepts) | 概念映射、融合算法与案例实践 |
+| 第 23 章 | [神经符号融合与 AI](/ch23-neuro-symbolic-ai/01-symbolic-Neuro-comparison) | 知识图谱嵌入、LLM 增强推理 |
+
+---
+
+## 附录资源
+
+| 附录 | 内容 | 链接 |
+|------|------|------|
+| 附录 A | [OWL 2 属性速查表](/appendix-a-owl2-reference/) | 常用公理速查 |
+| 附录 B | [Protégé 常用快捷键](/appendix-b-protoge-shortcuts/) | 提效操作汇总 |
+| 附录 C | [常用本体仓库与资源](/appendix-c-repositories/) | Linked Open Vocabularies |
+| 附录 D | [RDF/XML 与 Turtle 语法对照](/appendix-d-rdf-syntax-comparison/) | 序列化差异比较 |
+| 附录 E | [Pizza Ontology 教程指引](/appendix-e-pizza-tutorial/) | OWL 学习经典案例 |
+| 附录 F | [Protégé 教程资源索引](/appendix-f-protege-resources/) | 官方与社区学习指南 |
+| 附录 G | [术语中英对照表](/appendix-g-glossary/) | 专业术语索引 |
+
+---
+
+## 学习与使用建议
+
+### 🎯 推荐学习路径
+
+| 学习者类型 | 推荐顺序 |
+|:----------|----------|
+| **完整系统学习** | 模块一 → 二 → 三 → 四 → 五 → 六 |
+| **快速上手建模** | 模块二 → 四(Ch8~Ch12) → 配套 Protégé 实践 |
+| **查询与分析** | 模块五 (SPARQL + SHACL) |
+| **进阶研究** | 模块七 → 模块八（选学） |
+
+> **模块八为进阶选学内容**，可在完成核心模块后选修。附录部分可作为日常学习的查阅手册。
+
+### 💻 实践建议
+
+- 学习 **OWL 2** 与 **Protégé** 相关内容时，建议配合本地操作演练。
+- 在理解 **RDF** 语法后，推荐使用 [Zazuko IDE](https://ide.zazuko.com/) 在线编写和验证 Turtle / JSON-LD 数据。
+- 探索 **SPARQL** 时，可直接连接 [DBpedia SPARQL Endpoint](https://dbpedia.org/sparql) 进行实战练习。
+
+---
 
 ## 前置知识
 
 学习本课程教材，建议具备以下基础知识：
 
-- 计算机网络基础
-- 数据库基本概念
-- XML 基础（有助于理解 RDF/XML）
-- 编程基础（有助于理解本体的应用）
+- 计算机网络基础（理解 URL/IRI 在 Web 中的角色）
+- 数据库基本概念（关系模型有助于对比理解 RDF 图模型）
+- XML 基础（有助于理解 RDF/XML 格式）
+- 编程基础（有助于理解本体的实际应用集成）
 
 <style scoped>
 #modules {
   scroll-margin-top: 100px;
 }
 
-.module-section {
-  margin: 24px 0;
-  border: 1px solid var(--vp-c-divider);
+.course-overview {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.overview-card {
+  padding: 1.5rem;
   border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.25s;
-}
-
-.module-section:hover {
-  border-color: var(--vp-c-brand-soft);
-}
-
-.module-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 20px;
-  background: var(--vp-c-bg-soft);
-  border-bottom: 1px solid var(--vp-c-divider);
-}
-
-.module-header.optional {
-  background: var(--vp-c-bg-soft-mute);
-}
-
-.module-badge {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--vp-c-white);
-  background: var(--vp-c-brand-1);
-  border-radius: 20px;
-  white-space: nowrap;
-}
-
-.module-badge.optional {
-  background: var(--vp-c-warning-1);
-  color: var(--vp-c-warning-dark);
-}
-
-.module-header h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-}
-
-.module-content {
-  padding: 20px;
-}
-
-.module-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.module-item {
-  padding: 12px 16px;
-  background: var(--vp-c-bg);
-  border-radius: 8px;
-  border: 1px solid var(--vp-c-gutter);
-}
-
-.module-item-title {
-  margin-bottom: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--vp-c-text-1);
-}
-
-.module-item-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.module-item-links a {
-  display: inline-block;
-  padding: 4px 10px;
-  font-size: 13px;
-  color: var(--vp-c-text-2);
-  background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.2s;
+  background: var(--vp-c-bg-soft);
+  transition: all 0.25s ease;
 }
 
-.module-item-links a:hover {
-  color: var(--vp-c-brand-1);
+.overview-card:hover {
   border-color: var(--vp-c-brand-soft);
-  background: var(--vp-c-brand-soft-mute);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
-/* 响应式设计 */
+.overview-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.overview-card .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin-bottom: 0.5rem;
+}
+
+.overview-card .detail {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+/* 响应式优化 */
 @media (max-width: 640px) {
-  .module-header {
-    padding: 12px 16px;
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
-  .module-content {
-    padding: 16px;
-  }
-  
-  .module-item {
-    padding: 10px 12px;
-  }
-  
-  .module-item-links {
-    gap: 6px;
-  }
-  
-  .module-item-links a {
-    padding: 3px 8px;
-    font-size: 12px;
+  .vp-doc .container {
+    max-width: 100%;
+    padding: 0 1rem;
   }
 }
 </style>
