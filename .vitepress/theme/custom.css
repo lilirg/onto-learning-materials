@@ -117,15 +117,16 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+
   .features-section,
   .modules-section {
     padding: 32px 16px;
   }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .modules-grid {
     grid-template-columns: 1fr;
   }

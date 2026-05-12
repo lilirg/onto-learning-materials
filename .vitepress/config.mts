@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid';
 
-export default defineConfig({
+export default withMermaid({
   title: '本体论与语义网',
   description: '从 0 开始学习 Web Ontology 的系统教材，涵盖 RDF、RDFS、OWL 2、SPARQL、SHACL 等 W3C 标准',
   lang: 'zh-CN',
@@ -427,7 +428,7 @@ export default defineConfig({
     },
     footer: {
       message: '采用 MIT 许可证发布',
-      copyright: 'Copyright © 2024 Ontology Learning Materials',
+      copyright: 'Copyright © 2026 Ontology Learning Materials',
     },
   },
 })
