@@ -1,22 +1,29 @@
 # 附录 A: OWL 2 速查表
 
-## OWL 2 核心术语速查
+## OWL 2 类表达式
 
-### 类相关
+| 表达式 | 含义 |
+|--------|------|
+| `A ⊓ B` | 类 A 和类 B 的交集 |
+| `A ⊔ B` | 类 A 和类 B 的并集 |
+| `¬A` | 类 A 的补集 |
+| `∃r.A` | 通过属性 r 与某个 A 有关系的个体 |
+| `∀r.A` | 通过属性 r 只与 A 类个体有关系的个体 |
 
-| 术语 | 说明 |
+## OWL 2 属性公理
+
+| 公理 | 含义 |
 |------|------|
-| owl:Class | 类的定义 |
-| owl:equivalentClass | 等价类 |
-| owl:disjointWith | 不相交类 |
-| owl:subClassOf | 子类关系 |
+| `TransitiveObjectProperty(r)` | r 是传递属性 |
+| `SymmetricObjectProperty(r)` | r 是对称属性 |
+| `ReflexiveObjectProperty(r)` | r 是自反属性 |
+| `IrreflexiveObjectProperty(r)` | r 是非自反属性 |
+| `FunctionalDataProperty(r)` | r 是函数属性 |
 
-### 属性相关
+## OWL 2 数据类型约束
 
-| 术语 | 说明 |
+| 约束 | 示例 |
 |------|------|
-| owl:ObjectProperty | 对象属性 |
-| owl:DatatypeProperty | 数据属性 |
-| owl:transitiveProperty | 传递属性 |
-| owl:symmetricProperty | 对称属性 |
-| owl:functionalProperty | 函数属性 |
+| `owl:minNumericLiteral` | 至少有 1 个值 ≥ 18 |
+| `owl:maxNumericLiteral` | 至少有 1 个值 ≤ 65 |
+| `owl:hasValue` | 值恰好是给定的常量 |

@@ -139,6 +139,7 @@ docs/
 - [W3C SPARQL 1.1](https://www.w3.org/TR/sparql11-overview/)
 - [W3C SHACL](https://www.w3.org/TR/shacl/)
 - [W3C SKOS](https://www.w3.org/TR/skos-reference/)
+- [本项目 GitHub](https://github.com/lilirg/onto-learning-materials)
 - [CS520 Web Ontology Course](https://github.com/sta1129/cs520-web-ontology)
 - [Ontology Engineering (Gómez-Pévez)](https://www.ia.uni-saarland.de/de/project_handbook/)
 - [NeOn Methodology](https://www.neon-project.org/)

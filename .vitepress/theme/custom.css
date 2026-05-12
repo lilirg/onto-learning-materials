@@ -1,0 +1,132 @@
+:root {
+  --vp-c-brand-1: #6366f1;
+  --vp-c-brand-2: #818cf8;
+  --vp-c-brand-3: #a5b4fc;
+  --vp-c-brand-light: #c7d2fe;
+  --vp-c-brand-dark: #4f46e5;
+  --vp-c-brand-darker: #3730a3;
+}
+
+/* Hero section */
+.VPHero .main .spotlight {
+  position: relative;
+  z-index: 10;
+}
+
+/* Features grid */
+.VPHero .main .actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+/* Custom features section */
+.features-section {
+  padding: 48px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  color: var(--vp-c-brand-1);
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.feature-card p {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Module navigation */
+.modules-section {
+  padding: 48px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.module-card {
+  background: var(--vp-c-bg-alt);
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 4px solid var(--vp-c-brand-1);
+}
+
+.module-card h4 {
+  margin: 0 0 12px 0;
+  color: var(--vp-c-text-1);
+  font-size: 16px;
+}
+
+.module-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.module-card li {
+  padding: 4px 0;
+}
+
+.module-card a {
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.module-card a:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* Footer customization */
+.footer {
+  padding: 24px;
+  text-align: center;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 14px;
+  color: var(--vp-c-text-3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .features-section,
+  .modules-section {
+    padding: 32px 16px;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+}
