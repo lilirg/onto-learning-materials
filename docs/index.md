@@ -4,7 +4,7 @@ layout: home
 hero:
   name: 本体论与语义网
   text: 系统教材
-  tagline: 掌握 Web Ontology 核心技术 | RDF · RDFS · OWL 2 · SPARQL · SHACL
+  tagline: 从哲学基础到神经符号 AI，系统掌握 W3C 语义网标准技术栈
   image:
     src: /logo.svg
     alt: Ontology Learning Materials
@@ -13,37 +13,57 @@ hero:
       text: 开始学习
       link: /ch01-what-is-ontology/01-overview
     - theme: alt
-      text: 查看所有章节
-      link: '/ch01-what-is-ontology/01-overview'
+      text: 知识体系图
+      link: '#modules'
+    - theme: alt
+      text: 查看 GitHub
+      link: https://github.com/lilirg/onto-learning-materials
 
 features:
   - icon: 📚
-    title: 23 章系统教材
-    details: 从哲学基础到神经符号 AI，覆盖本体工程完整知识体系
+    title: 完整知识体系
+    details: 23 章核心内容 + 7 个附录，从理论基础到前沿应用全覆盖
   - icon: 🏛️
-    title: 严格遵循 W3C 标准
-    details: RDF 1.1、OWL 2、SPARQL 1.1、SHACL 等 W3C 推荐标准
+    title: W3C 标准
+    details: 严格遵循 RDF 1.1、OWL 2、SPARQL 1.1、SHACL 等 W3C 推荐标准
   - icon: 🛠️
-    title: Protégé 实践
-    details: 使用 Protégé 工具动手实践，每章配备练习实例
+    title: 实践导向
+    details: Protégé 工具实操，每章配备练习实例与真实案例
+  - icon: 🔍
+    title: 推理与验证
+    details: 深入理解描述逻辑、推理机与一致性检查机制
 ---
-
-<style>
-.vp-hero .VPHero .container {
-  max-width: 900px;
-}
-.vp-hero .VPHero .main {
-  padding-top: 1rem;
-}
-</style>
 
 <div id="modules"></div>
 
-## 课程概览
+<div class="overview-section">
+<h2 class="section-title">课程概览</h2>
+<p class="section-desc">本课程是一套面向零基础学习者的系统性本体工程教材，深入讲解 W3C 语义网标准体系。内容从哲学基础出发，逐步深入到实际建模，涵盖理论知识、工具操作与实践练习。</p>
+</div>
 
-本课程是一套面向零基础学习者的系统性本体工程教材，深入讲解 W3C 语义网标准体系。内容从哲学基础出发，逐步深入到实际建模，涵盖理论知识、工具操作与实践练习，帮助读者循序渐进地掌握本体工程的核心知识与实践技能。
+<div class="stats-grid">
+<div class="stat-card">
+<div class="stat-value">23</div>
+<div class="stat-label">核心章节</div>
+</div>
+<div class="stat-card">
+<div class="stat-value">7</div>
+<div class="stat-label">实用附录</div>
+<div class="stat-value">8</div>
+<div class="stat-label">知识模块</div>
+</div>
+<div class="stat-card">
+<div class="stat-value">5</div>
+<div class="stat-label">W3C 标准</div>
+</div>
+<div class="stat-card">
+<div class="stat-value">∞</div>
+<div class="stat-label">实践价值</div>
+</div>
+</div>
 
-### 📐 知识体系地图
+<div class="course-map">
+<h2 class="section-title">📐 知识体系地图</h2>
 
 ```mermaid
 graph LR
@@ -64,205 +84,567 @@ graph LR
     style G fill:#fff8e1,color:#000
     style H fill:#efebe9,color:#000
 ```
+</div>
 
-### 📊 课程统计
+<div class="module-sections">
+<h2 class="section-title">📖 课程模块</h2>
 
-| 指标 | 数值 |
-|------|------|
-| 核心章节 | 23 章 |
-| 实战附录 | 7 个 |
-| 涵盖标准 | W3C RDF 1.1 / OWL 2 / SPARQL 1.1 / SHACL |
-| 实践工具 | Protégé, Jena, Zazuko |
+<div class="module-grid">
+<div class="module-card">
+<div class="module-number">模块 01</div>
+<h3 class="module-title">理论与哲学基础</h3>
+<div class="module-icon">🧠</div>
+<p class="module-desc">理解"什么是知识"和"如何对世界进行分类"，奠定本体工程的思想根基。</p>
+<div class="module-links">
+<a href="/ch01-what-is-ontology/01-overview">第 1 章：什么是本体</a>
+<a href="/ch02-philosophy-conceptualization/01-philosophical-roots">第 2 章：哲学渊源</a>
+<a href="/ch03-core-concepts/01-elements">第 3 章：核心概念</a>
+</div>
+</div>
 
----
+<div class="module-card">
+<div class="module-number">模块 02</div>
+<h3 class="module-title">RDF 数据模型</h3>
+<div class="module-icon">🔗</div>
+<p class="module-desc">RDF 是语义网的数据基石，系统讲解如何描述和建模知识。</p>
+<div class="module-links">
+<a href="/ch04-rdf-data-model/01-rdf-introduction">第 4 章：RDF 数据模型</a>
+<a href="/ch05-rdf-syntax/01-serialization-overview">第 5 章：RDF 语法格式</a>
+</div>
+</div>
 
-## 课程结构
+<div class="module-card">
+<div class="module-number">模块 03</div>
+<h3 class="module-title">RDFS 与 SKOS</h3>
+<div class="module-icon">📋</div>
+<p class="module-desc">在 RDF 基础上构建层次和词汇体系，掌握分类与标签管理。</p>
+<div class="module-links">
+<a href="/ch06-rdfs-core/01-rdf-vocabulary">第 6 章：RDFS 核心概念</a>
+<a href="/ch07-skos-vocabulary/01-skos-introduction">第 7 章：SKOS 词汇构造</a>
+</div>
+</div>
 
-本课程共 **8 大模块**、23 章核心内容 + 7 个实用附录。
+<div class="module-card module-card-highlight">
+<div class="module-number">模块 04</div>
+<h3 class="module-title">OWL 2 核心</h3>
+<div class="module-icon">🏗️</div>
+<p class="module-desc">OWL 2 是最强大的语义网本体语言。深入描述逻辑、公理系统与建模技巧。</p>
+<div class="module-links">
+<a href="/ch08-owl2-overview/01-why-owl2">第 8 章：OWL 2 概述</a>
+<a href="/ch09-protoge-intro/01-protoge-introduction">第 9 章：Protégé 入门</a>
+<a href="/ch10-owl2-class-modeling/01-class-expressions">第 10 章：类建模</a>
+<a href="/ch11-owl2-property-axioms/01-object-data-properties">第 11 章：属性公理</a>
+<a href="/ch12-owl2-data-constraints/01-cardinality-constraints">第 12 章：数据约束</a>
+</div>
+</div>
 
-### 🔹 模块一：理论与哲学基础
+<div class="module-card">
+<div class="module-number">模块 05</div>
+<h3 class="module-title">推理与验证</h3>
+<div class="module-icon">🔎</div>
+<p class="module-desc">学习查询语言和验证机制，提取及确保知识质量。</p>
+<div class="module-links">
+<a href="/ch13-sparql-query/01-sparql-introduction">第 13 章：SPARQL 查询</a>
+<a href="/ch14-shacl-validation/01-shacl-introduction">第 14 章：SHACL 验证</a>
+<a href="/ch15-reasoning-consistency/01-reasoning-basics">第 15 章：推理与一致性</a>
+</div>
+</div>
 
-本模块奠定本体工程的思想根基，理解"什么是知识"和"如何对世界进行分类"。
+<div class="module-card">
+<div class="module-number">模块 06</div>
+<h3 class="module-title">本体工程方法</h3>
+<div class="module-icon">⚙️</div>
+<p class="module-desc">关注本体开发的工程化方法论、质量保障与实践流程。</p>
+<div class="module-links">
+<a href="/ch16-development-lifecycle/01-lifecycle-phases">第 16 章：开发生命周期</a>
+<a href="/ch17-methodologies-comparison/01-methontology">第 17 章：方法论</a>
+<a href="/ch18-quality-assessment/01-evaluation-dimensions">第 18 章：质量评估</a>
+</div>
+</div>
 
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 1 章 | [什么是本体](/ch01-what-is-ontology/01-overview) | 本体定义、与数据库/术语表的差异、应用领域 |
-| 第 2 章 | [哲学渊源与概念化](/ch02-philosophy-conceptualization/01-philosophical-roots) | 从亚里士多德分类到现代概念化方法 |
-| 第 3 章 | [核心概念](/ch03-core-concepts/01-elements) | 类、实例、属性、公理四大基本元素 |
+<div class="module-card">
+<div class="module-number">模块 07</div>
+<h3 class="module-title">应用与工具生态</h3>
+<div class="module-icon">🌐</div>
+<p class="module-desc">了解本体在实际领域中的应用实践以及工具全景。</p>
+<div class="module-links">
+<a href="/ch19-mainstream-ontologies/01-upper-ontologies">第 19 章：主流本体</a>
+<a href="/ch20-application-scenarios/01-biomedicine">第 20 章：应用场景</a>
+<a href="/ch21-tool-ecosystem/01-editors">第 21 章：工具生态</a>
+</div>
+</div>
 
-### 🔹 模块二：RDF 数据模型
+<div class="module-card">
+<div class="module-number">模块 08</div>
+<h3 class="module-title">专家进阶 <span class="badge">选学</span></h3>
+<div class="module-icon">🚀</div>
+<p class="module-desc">深入学习本体对齐、融合及神经符号 AI 前沿话题。</p>
+<div class="module-links">
+<a href="/ch22-ontology-alignment/01-concepts">第 22 章：本体对齐</a>
+<a href="/ch23-neuro-symbolic-ai/01-symbolic-Neuro-comparison">第 23 章：神经符号 AI</a>
+</div>
+</div>
+</div>
+</div>
 
-RDF（Resource Description Framework）是语义网的数据基石。本模块系统讲解如何描述和建模知识。
+<div class="appendix-section">
+<h2 class="section-title">📎 附录资源</h2>
 
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 4 章 | [RDF 数据模型](/ch04-rdf-data-model/01-rdf-introduction) | 三元组模型、图结构、W3C 标准模型 |
-| 第 5 章 | [RDF 语法格式](/ch05-rdf-syntax/01-serialization-overview) | Turtle、N-Triples、JSON-LD 序列化对比与校验 |
+<div class="appendix-grid">
+<div class="appendix-card">
+<h4>附录 A</h4>
+<p>OWL 2 属性速查表</p>
+<a href="/appendix-a-owl2-reference">查看 →</a>
+</div>
+<div class="appendix-card">
+<h4>附录 B</h4>
+<p>Protégé 常用快捷键</p>
+<a href="/appendix-b-protoge-shortcuts">查看 →</a>
+</div>
+<div class="appendix-card">
+<h4>附录 C</h4>
+<p>常用本体仓库</p>
+<a href="/appendix-c-repositories">查看 →</a>
+</div>
+<div class="appendix-card">
+<h4>附录 D</h4>
+<p>RDF/XML 与 Turtle 对照</p>
+<a href="/appendix-d-rdf-syntax-comparison">查看 →</a>
+</div>
+<div class="appendix-card">
+<h4>附录 E</h4>
+<p>Pizza Ontology 教程</p>
+<a href="/appendix-e-pizza-tutorial">查看 →</a>
+</div>
+<div class="appendix-card">
+<h4>附录 F</h4>
+<p>Protégé 资源索引</p>
+<a href="/appendix-f-protege-resources">查看 →</a>
+</div>
+<div class="appendix-card">
+<h4>附录 G</h4>
+<p>术语中英对照表</p>
+<a href="/appendix-g-glossary">查看 →</a>
+</div>
+</div>
+</div>
 
-### 🔹 模块三：RDFS 与 SKOS
+<div class="learning-path">
+<h2 class="section-title">🎯 学习路径建议</h2>
 
-在 RDF 基础上构建层次和词汇体系。
+<div class="path-cards">
+<div class="path-card">
+<div class="path-icon">🎓</div>
+<h4>完整系统学习</h4>
+<p>模块一 → 二 → 三 → 四 → 五 → 六</p>
+</div>
+<div class="path-card">
+<div class="path-icon">🚀</div>
+<h4>快速上手建模</h4>
+<p>模块二 → 四 (Ch8~Ch12) → Protégé 实践</p>
+</div>
+<div class="path-card">
+<div class="path-icon">🔍</div>
+<h4>查询与分析</h4>
+<p>模块五 (SPARQL + SHACL)</p>
+</div>
+<div class="path-card">
+<div class="path-icon">🌟</div>
+<h4>进阶研究</h4>
+<p>模块七 → 模块八（选学）</p>
+</div>
+</div>
+</div>
 
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 6 章 | [RDFS 核心概念](/ch06-rdfs-core/01-rdf-vocabulary) | 类层次 (`rdfs:subClassOf`)、属性域与范围 |
-| 第 7 章 | [SKOS 词汇构造](/ch07-skos-vocabulary/01-skos-introduction) | 概念体系、标签管理、主题词表实践 |
+<div class="tools-section">
+<h2 class="section-title">🛠️ 推荐工具</h2>
 
-### 🔹 模块四：OWL 2 核心
-
-OWL 2 是最强大的语义网本体语言。本模块深入其逻辑基础和建模技巧。
-
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 8 章 | [OWL 2 概述](/ch08-owl2-overview/01-why-owl2) | 描述逻辑、OWL 概要、OWA 与 CWA |
-| 第 9 章 | [Protégé 入门](/ch09-protoge-intro/01-protoge-introduction) | 工具安装、本体创建与基础建模实践 |
-| 第 10 章 | [OWL 2 类建模](/ch10-owl2-class-modeling/01-class-expressions) | 类表达式、等价/不相交、推理 |
-| 第 11 章 | [OWL 2 属性公理](/ch11-owl2-property-axioms/01-object-data-properties) | 对象属性、数据属性、传递/逆属性 |
-| 第 12 章 | [OWL 2 数据约束](/ch12-owl2-data-constraints/01-cardinality-constraints) | 基数约束、值域、数据类型限制 |
-
-### 🔹 模块五：推理与验证
-
-学习如何使用查询语言和验证机制提取及确保知识质量。
-
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 13 章 | [SPARQL 查询语言](/ch13-sparql-query/01-sparql-introduction) | 基本图模式、高级查询与数据集 |
-| 第 14 章 | [SHACL 约束验证](/ch14-shacl-validation/01-shacl-introduction) | 形状定义、复杂约束条件 |
-| 第 15 章 | [OWL 推理与一致性](/ch15-reasoning-consistency/01-reasoning-basics) | 推理机制、一致性检查、分类器工具 |
-
-### 🔹 模块六：本体工程方法
-
-关注本体开发的工程化方法论和质量保障。
-
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 16 章 | [本体开发生命周期](/ch16-development-lifecycle/01-lifecycle-phases) | 需求→概念化→形式化→评估→维护 |
-| 第 17 章 | [主流方法论](/ch17-methodologies-comparison/01-methontology) | METHONTOLOGY, NeOn, Agile 比较 |
-| 第 18 章 | [本体质量评估](/ch18-quality-assessment/01-evaluation-dimensions) | 评估维度、Ontometrics、自动化工具 |
-
-### 🔹 模块七：应用与工具生态
-
-了解本体在实际领域中的应用实践以及工具全景。
-
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 19 章 | [主流本体赏析](/ch19-mainstream-ontologies/01-upper-ontologies) | BFO, CYC, SAREF, FIBO 等经典本体 |
-| 第 20 章 | [典型应用场景](/ch20-application-scenarios/01-biomedicine) | 生物医学、搜索引擎、企业管理 |
-| 第 21 章 | [工具生态全景](/ch21-tool-ecosystem/01-editors) | 编辑器、推理器、三元组数据库 |
-
-### 🔹 模块八（选学）：专家进阶
-
-深入学习本体对齐、融合及神经符号 AI 前沿话题。
-
-| 章节 | 主题 | 内容概要 |
-|:----:|------|----------|
-| 第 22 章 | [本体对齐与融合](/ch22-ontology-alignment/01-concepts) | 概念映射、融合算法与案例实践 |
-| 第 23 章 | [神经符号融合与 AI](/ch23-neuro-symbolic-ai/01-symbolic-Neuro-comparison) | 知识图谱嵌入、LLM 增强推理 |
-
----
-
-## 附录资源
-
-| 附录 | 内容 | 链接 |
-|------|------|------|
-| 附录 A | [OWL 2 属性速查表](/appendix-a-owl2-reference/) | 常用公理速查 |
-| 附录 B | [Protégé 常用快捷键](/appendix-b-protoge-shortcuts/) | 提效操作汇总 |
-| 附录 C | [常用本体仓库与资源](/appendix-c-repositories/) | Linked Open Vocabularies |
-| 附录 D | [RDF/XML 与 Turtle 语法对照](/appendix-d-rdf-syntax-comparison/) | 序列化差异比较 |
-| 附录 E | [Pizza Ontology 教程指引](/appendix-e-pizza-tutorial/) | OWL 学习经典案例 |
-| 附录 F | [Protégé 教程资源索引](/appendix-f-protege-resources/) | 官方与社区学习指南 |
-| 附录 G | [术语中英对照表](/appendix-g-glossary/) | 专业术语索引 |
-
----
-
-## 学习与使用建议
-
-### 🎯 推荐学习路径
-
-| 学习者类型 | 推荐顺序 |
-|:----------|----------|
-| **完整系统学习** | 模块一 → 二 → 三 → 四 → 五 → 六 |
-| **快速上手建模** | 模块二 → 四(Ch8~Ch12) → 配套 Protégé 实践 |
-| **查询与分析** | 模块五 (SPARQL + SHACL) |
-| **进阶研究** | 模块七 → 模块八（选学） |
-
-> **模块八为进阶选学内容**，可在完成核心模块后选修。附录部分可作为日常学习的查阅手册。
-
-### 💻 实践建议
-
-- 学习 **OWL 2** 与 **Protégé** 相关内容时，建议配合本地操作演练。
-- 在理解 **RDF** 语法后，推荐使用 [Zazuko IDE](https://ide.zazuko.com/) 在线编写和验证 Turtle / JSON-LD 数据。
-- 探索 **SPARQL** 时，可直接连接 [DBpedia SPARQL Endpoint](https://dbpedia.org/sparql) 进行实战练习。
-
----
-
-## 前置知识
-
-学习本课程教材，建议具备以下基础知识：
-
-- 计算机网络基础（理解 URL/IRI 在 Web 中的角色）
-- 数据库基本概念（关系模型有助于对比理解 RDF 图模型）
-- XML 基础（有助于理解 RDF/XML 格式）
-- 编程基础（有助于理解本体的实际应用集成）
+<div class="tools-grid">
+<a href="https://protege.stanford.edu/" target="_blank" rel="noopener" class="tool-card">
+<div class="tool-icon">🎭</div>
+<div class="tool-info">
+<h4>Protégé</h4>
+<p>斯坦福大学开发的开源本体编辑器</p>
+</div>
+</a>
+<a href="https://ide.zazuko.com/" target="_blank" rel="noopener" class="tool-card">
+<div class="tool-icon">✨</div>
+<div class="tool-info">
+<h4>Zazuko IDE</h4>
+<p>在线 RDF/SPARQL 编写与验证工具</p>
+</div>
+</a>
+<a href="https://dbpedia.org/sparql" target="_blank" rel="noopener" class="tool-card">
+<div class="tool-icon">📊</div>
+<div class="tool-info">
+<h4>DBpedia Endpoint</h4>
+<p>现实世界知识图谱 SPARQL 查询实践</p>
+</div>
+</a>
+<a href="https://www.w3.org/standards/semanticweb/" target="_blank" rel="noopener" class="tool-card">
+<div class="tool-icon">🏛️</div>
+<div class="tool-info">
+<h4>W3C 标准</h4>
+<p>语义网官方技术规范文档</p>
+</div>
+</a>
+</div>
+</div>
 
 <style scoped>
 #modules {
   scroll-margin-top: 100px;
 }
 
-.course-overview {
+/* 通用样式 */
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin: 3rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--vp-c-divider);
   text-align: center;
-  padding: 2rem 0;
 }
 
-.overview-grid {
+.section-desc {
+  text-align: center;
+  color: var(--vp-c-text-2);
+  max-width: 720px;
+  margin: -1rem auto 2rem;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* Hero 优化 */
+.VPHero .container {
+  max-width: 900px;
+}
+.VPHero .main {
+  padding-top: 1.5rem;
+}
+
+/* 统计网格 */
+.stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.overview-card {
-  padding: 1.5rem;
+.stat-card {
+  text-align: center;
+  padding: 1.5rem 1rem;
   border-radius: 12px;
-  border: 1px solid var(--vp-c-divider);
   background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
   transition: all 0.25s ease;
 }
 
-.overview-card:hover {
+.stat-card:hover {
   border-color: var(--vp-c-brand-soft);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-.overview-card .icon {
+.stat-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  margin-top: 0.25rem;
+}
+
+/* 课程地图 */
+.course-map {
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  border: 1px solid var(--vp-c-divider);
+}
+
+/* 模块网格 */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.module-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.module-card:hover {
+  border-color: var(--vp-c-brand-soft);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.module-card-highlight {
+  border-color: var(--vp-c-brand-soft);
+  background: linear-gradient(135deg, rgba(21, 101, 192, 0.05), rgba(13, 71, 161, 0.05));
+}
+
+.module-card-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vp-c-brand-1), var(--vp-c-brand-2));
+  border-radius: 12px 12px 0 0;
+}
+
+.module-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.module-number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.module-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.module-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.module-desc {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.module-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.module-links a {
+  font-size: 0.8125rem;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+}
+
+.module-links a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration: underline;
+}
+
+/* 徽章 */
+.badge {
+  font-size: 0.6875rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 12px;
+  background: var(--vp-c-tip-media);
+  color: var(--vp-c-tip-1);
+  font-weight: 500;
+}
+
+/* 附录部分 */
+.appendix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.appendix-card {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.appendix-card:hover {
+  border-color: var(--vp-c-brand-soft);
+  transform: translateY(-2px);
+}
+
+.appendix-card h4 {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-3);
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.appendix-card p {
+  font-size: 0.875rem;
+  color: var(--vp-c-text-1);
+  margin: 0 0 0.75rem;
+}
+
+.appendix-card a {
+  font-size: 0.8125rem;
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.appendix-card a:hover {
+  text-decoration: underline;
+}
+
+/* 学习路径 */
+.path-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.path-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.path-card:hover {
+  border-color: var(--vp-c-brand-soft);
+  transform: translateY(-4px);
+}
+
+.path-icon {
   font-size: 2rem;
   margin-bottom: 0.75rem;
 }
 
-.overview-card .title {
-  font-size: 1.1rem;
-  font-weight: 600;
+.path-card h4 {
+  font-size: 1rem;
   color: var(--vp-c-text-1);
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
 }
 
-.overview-card .detail {
-  font-size: 0.875rem;
+.path-card p {
+  font-size: 0.8125rem;
   color: var(--vp-c-text-2);
-  line-height: 1.6;
+  margin: 0;
 }
 
-/* 响应式优化 */
-@media (max-width: 640px) {
-  .overview-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+/* 工具部分 */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.tool-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+}
+
+.tool-card:hover {
+  border-color: var(--vp-c-brand-soft);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.tool-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.tool-info h4 {
+  font-size: 0.9375rem;
+  color: var(--vp-c-text-1);
+  margin: 0 0 0.25rem;
+}
+
+.tool-info p {
+  font-size: 0.75rem;
+  color: var(--vp-c-text-2);
+  margin: 0;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   
-  .vp-doc .container {
-    max-width: 100%;
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tools-grid,
+  .path-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .appendix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .appendix-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .VPHero .container {
     padding: 0 1rem;
   }
 }
