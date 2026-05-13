@@ -34,7 +34,7 @@ graph TD
 
 ## 2. 步骤一：使用 OntoMetrics Web 服务进行评估
 
-**OntoMetrics Web Service** 是一个基于 Web 的在线评估平台（[http://ontoMetrics.com](http://ontoMetrics.com) ），上传本体文件即可自动生成报告。
+**OntoMetrics Web Service** 是一个基于 Web 的在线评估平台（[https://github.com/iceu-ft/MetricsForOntologies/releases](https://github.com/iceu-ft/MetricsForOntologies/releases) — 本地部署），上传本体文件即可自动生成报告。
 
 ### 2.1 操作流程
 
@@ -62,13 +62,13 @@ graph TD
 
 ## 3. 步骤二：量化指标计算
 
-使用基于 OWL API 编写的脚本 [`generate_metrics.py`](scripts/generate_metrics.py)（或 OntoMetrics 的 CLI 版本）进行**结构维度（Structural）**的计算：
+使用基于 OWL API 编写的脚本 [`generate_metrics.py`](https://github.com/iceu-ft/MetricsForOntologies/blob/master/scripts/generate_metrics.py)（或 OntoMetrics 的 CLI 版本）进行**结构维度（Structural）**的计算：
 
 ### 3.1 结构维度量化结果
 
 ```bash
 # 执行命令
-python scripts/generate_metrics.py --input docs/ch09-protoge-intro/examples/movie-ontology.owl
+python generate_metrics.py --input movie-ontology.owl
 
 # 输出报告:
 [Structural Metrics Report]

@@ -27,12 +27,12 @@
 
 | OWL 2 语法 | 描述逻辑记法 | 含义 | 示例 |
 |-------------|-------------|------|------|
-| `owl:equivalentClass` | `A ≡ B` | 类 A 与类 B 等价 | [`owl:equivalentClass`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md:1) |
-| `owl:disjointWith` | `A ∩ B = ∅` | 类 A 与类 B 不相交 | [`owl:disjointWith`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md:1) |
-| `owl:subclassOf` | `A ⊑ B` | 类 A 是类 B 的子类 | [`owl:subclassOf`](../ch06-rdfs-core/02-subclass-subproperty.md:1) |
-| `owl:intersectionOf` | `C ⊓ D` | 类交集 | [`owl:intersectionOf`](../ch10-owl2-class-modeling/01-class-expressions.md:40) |
-| `owl:unionOf` | `C ⊔ D` | 类联集 | [`owl:unionOf`](../ch10-owl2-class-modeling/01-class-expressions.md:19) |
-| `owl:complementOf` | `¬C` | 类补集 | [`owl:complementOf`](../ch10-owl2-class-modeling/01-class-expressions.md:18) |
+| `owl:equivalentClass` | `A ≡ B` | 类 A 与类 B 等价 | [`owl:equivalentClass`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
+| `owl:disjointWith` | `A ∩ B = ∅` | 类 A 与类 B 不相交 | [`owl:disjointWith`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
+| `owl:subclassOf` | `A ⊑ B` | 类 A 是类 B 的子类 | [`owl:subclassOf`](../ch06-rdfs-core/02-subclass-subproperty.md) |
+| `owl:intersectionOf` | `C ⊓ D` | 类交集 | [`owl:intersectionOf`](../ch10-owl2-class-modeling/01-class-expressions.md) |
+| `owl:unionOf` | `C ⊔ D` | 类联集 | [`owl:unionOf`](../ch10-owl2-class-modeling/01-class-expressions.md) |
+| `owl:complementOf` | `¬C` | 类补集 | [`owl:complementOf`](../ch10-owl2-class-modeling/01-class-expressions.md) |
 
 ### 2.2 类表达式示例
 
@@ -71,10 +71,10 @@
 |-------------|-------------|------|------|
 | `[owl:onProperty P; owl:someValuesFrom C]` | `∃P.C` | 存在约束：至少有一个 P 关系指向 C | `:Parent [owl:onProperty :hasChild; owl:someValuesFrom :Child]` |
 | `[owl:onProperty P; owl:allValuesFrom C]` | `∀P.C` | 全称约束：所有 P 关系都指向 C | `:PureBreed [owl:onProperty :parent; owl:allValuesFrom :PureBreed]` |
-| `[owl:onProperty P; owl:qualifiedCardinality N; owl:classOnValuesFrom C]` | `(≥ N P.C)` | 至少 N 个限制 | [`owl:minQualifiedCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md:1) |
+| `[owl:onProperty P; owl:qualifiedCardinality N; owl:classOnValuesFrom C]` | `(≥ N P.C)` | 至少 N 个限制 | [`owl:minQualifiedCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
 | `[owl:onProperty P; owl:minCardinality N]` | `(≥ N P.⊤)` | 至少 N 个关系（不限类型） | `:Person [owl:onProperty :hasFriend; owl:minCardinality 1]` |
-| `[owl:onProperty P; owl:maxCardinality N]` | `(≤ N P.⊤)` | 至多 N 个关系 | [`owl:maxCardinality`](../ch12-owl2-data-constraints/02-value-constraints.md:1) |
-| `[owl:onProperty P; owl:exactCardinality N]` | `(= N P.⊤)` | 恰好 N 个关系 | [`owl:exactCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md:1) |
+| `[owl:onProperty P; owl:maxCardinality N]` | `(≤ N P.⊤)` | 至多 N 个关系 | [`owl:maxCardinality`](../ch12-owl2-data-constraints/02-value-constraints.md) |
+| `[owl:onProperty P; owl:exactCardinality N]` | `(= N P.⊤)` | 恰好 N 个关系 | [`owl:exactCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
 
 ```turtle
 # 存在约束：「披萨」必须至少有一种配料
@@ -106,12 +106,12 @@
 
 | 公理 | 含义 | Turtle 示例 |
 |------|------|-------------|
-| `owl:TransitiveProperty` | 传递属性 | [`owl:TransitiveProperty`](../ch11-owl2-property-axioms/03-property-hierarchy-chain.md:1) |
+| `owl:TransitiveProperty` | 传递属性 | [`owl:TransitiveProperty`](../ch11-owl2-property-axioms/03-property-hierarchy-chain.md) |
 | `owl:SymmetricProperty` | 对称属性 | — |
 | `owl:ReflexiveProperty` | 自反属性 | — |
 | `owl:IrreflexiveProperty` | 非自反属性 | — |
 | `owl:AsymmetricProperty` | 非对称属性 | — |
-| `owl:FunctionalProperty` | 函数属性（至多一个值） | [`owl:FunctionalProperty`](../ch12-owl2-data-constraints/02-value-constraints.md:1) |
+| `owl:FunctionalProperty` | 函数属性（至多一个值） | [`owl:FunctionalProperty`](../ch12-owl2-data-constraints/02-value-constraints.md) |
 | `owl:InverseFunctionalProperty` | 逆函数属性 | — |
 | `owl:PartialFunctionProperty` | 部分函数属性 | — |
 | `owl:PartialInverseFunctionProperty` | 部分逆函数属性 | — |
@@ -134,10 +134,10 @@
 
 | 公理 | 含义 | 示例 |
 |------|------|------|
-| `owl:equivalentProperty` | 属性等价 | [`owl:equivalentProperty`](../ch11-owl2-property-axioms/01-object-data-properties.md:1) |
-| `owl:disjointProperty` | 属性不相交 | [`owl:disjointProperty`](../ch11-owl2-property-axioms/01-object-data-properties.md:1) |
+| `owl:equivalentProperty` | 属性等价 | [`owl:equivalentProperty`](../ch11-owl2-property-axioms/01-object-data-properties.md) |
+| `owl:disjointProperty` | 属性不相交 | [`owl:disjointProperty`](../ch11-owl2-property-axioms/01-object-data-properties.md) |
 | `owl:inverseOf` | 属性互为逆 | `owl:inverseOf` |
-| `owl:propertyChainAxiom` | 属性链 | [`owl:propertyChainAxiom`](../ch11-owl2-property-axioms/03-property-hierarchy-chain.md:1) |
+| `owl:propertyChainAxiom` | 属性链 | [`owl:propertyChainAxiom`](../ch11-owl2-property-axioms/03-property-hierarchy-chain.md) |
 
 ```turtle
 # 等价属性
@@ -168,9 +168,9 @@
 
 | RDF/OWL 语法 | 含义 | 示例 |
 |--------------|------|------|
-| `a` / `rdf:type` | 个体属于某个类 | [`rdf:type`](../ch04-rdf-data-model/02-resources-statements.md:1) |
-| `owl:sameAs` | 两个个体标识相同 | [`owl:sameAs`](../ch04-rdf-data-model/03-rdf11-standard.md:1) |
-| `owl:differentFrom` | 个体互不相同 | [`owl:differentFrom`](../ch04-rdf-data-model/02-resources-statements.md:1) |
+| `a` / `rdf:type` | 个体属于某个类 | [`rdf:type`](../ch04-rdf-data-model/02-resources-statements.md) |
+| `owl:sameAs` | 两个个体标识相同 | [`owl:sameAs`](../ch04-rdf-data-model/03-rdf11-standard.md) |
+| `owl:differentFrom` | 个体互不相同 | [`owl:differentFrom`](../ch04-rdf-data-model/02-resources-statements.md) |
 | `owl:distinctMembers` | 互异成员声明 | — |
 
 ```turtle
@@ -217,12 +217,12 @@
 
 | 约束 | 含义 | 示例 |
 |------|------|------|
-| `owl:minCardinality` | 最少个数 | [`owl:minCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md:1) |
-| `owl:maxCardinality` | 最多个数 | [`owl:maxCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md:1) |
-| `owl:exactCardinality` | 恰好个数 | [`owl:exactCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md:1) |
+| `owl:minCardinality` | 最少个数 | [`owl:minCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
+| `owl:maxCardinality` | 最多个数 | [`owl:maxCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
+| `owl:exactCardinality` | 恰好个数 | [`owl:exactCardinality`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
 | `owl:minQualifiedCardinality` | 至少 N 个指定类型的值 | — |
 | `owl:maxQualifiedCardinality` | 至多 N 个指定类型的值 | — |
-| `owl:hasValue` | 值等于指定常量 | [`owl:hasValue`](../ch12-owl2-data-constraints/02-value-constraints.md:1) |
+| `owl:hasValue` | 值等于指定常量 | [`owl:hasValue`](../ch12-owl2-data-constraints/02-value-constraints.md) |
 
 ### 5.3 值约束（Value Constraints）
 

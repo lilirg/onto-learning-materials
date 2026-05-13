@@ -124,7 +124,7 @@ LIMIT 20
 | **地址** | [http://www.geonames.org/](http://www.geonames.org/) |
 | **类型** | 地理命名数据服务 |
 | **数据量** | 1,000 万+ 地理名称 |
-| **SPARQL 端点** | [http://localhost:8890/sparql](http://localhost:8890/sparql) |
+| **SPARQL 端点** | Virtuoso SPARQL 端点 — 本地部署后使用 |
 
 **GeoLinkedData 核心特征**：
 

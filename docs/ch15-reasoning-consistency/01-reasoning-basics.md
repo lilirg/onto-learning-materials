@@ -8,16 +8,17 @@
 
 在继续学习本章之前，建议先阅读以下内容：
 
-- [第 8 章：OWL 2 概述](../ch08-owl2-overview/index.md) — 描述逻辑与 OWA/CWA 概念
-- [第 12 章：OWL 2 数据约束](../ch12-owl2-data-constraints/index.md) — 基数约束与公理
-- [第 4 章：RDF 数据模型](../ch04-rdf-data-model/index.md) — 三元组与资源
+- [第 8 章：OWL 2 概述](../ch08-owl2-overview/01-why-owl2.md) — 描述逻辑与 OWA/CWA 概念
+- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/01-object-data-properties.md) — 属性特征与公理
+- [第 12 章：OWL 2 数据约束](../ch12-owl2-data-constraints/01-cardinality-constraints.md) — 基数约束与公理
+- [第 4 章：RDF 数据模型](../ch04-rdf-data-model/01-rdf-introduction.md) — 三元组与资源
 
 ### ▶️ 继续阅读
 
 学习完本章后，可继续探索：
 
 - [第 15.2 节：推理机工具](./02-reasoner-tools.md) — 主流推理机配置与使用
-- [第 18 章：质量评估](../ch18-quality-assessment/index.md) — 本体的质量评估维度
+- [第 18 章：质量评估](../ch18-quality-assessment/01-evaluation-dimensions.md) — 本体的质量评估维度
 
 ## 1. 推理（Reasoning）的本体论基础
 

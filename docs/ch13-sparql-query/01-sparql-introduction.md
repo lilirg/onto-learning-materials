@@ -8,16 +8,16 @@
 
 在继续学习本章之前，建议先阅读以下内容：
 
-- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/index.md) — 属性定义与约束
-- [第 10 章：OWL 2 类建模](../ch10-owl2-class-modeling/index.md) — 类表达式与等价定义
-- [第 4 章：RDF 数据模型](../ch04-rdf-data-model/index.md) — 三元组与资源
+- [第 10 章：OWL 2 类建模](../ch10-owl2-class-modeling/01-class-expressions.md) — 类表达式与等价定义
+- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/01-object-data-properties.md) — 属性定义与约束
+- [第 4 章：RDF 数据模型](../ch04-rdf-data-model/01-rdf-introduction.md) — 三元组与资源
 
 ### ▶️ 继续阅读
 
 学习完本章后，可继续探索：
 
 - [第 13.2 节：基本图模式查询](./02-basic-graph-patterns.md) — 深入三元组模式（Triple Pattern）、基本图模式（BGP）等
-- [第 14 章：SHACL 数据验证](../ch14-shacl-validation/index.md) — 如何使用 SHACL 验证 RDF 数据
+- [第 14 章：SHACL 数据验证](../ch14-shacl-validation/01-shacl-introduction.md) — 如何使用 SHACL 验证 RDF 数据
 
 ## 1. SPARQL 的定义与历史
 

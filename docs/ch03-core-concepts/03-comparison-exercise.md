@@ -294,4 +294,4 @@ flowchart LR
 
 ---
 
-> **本章小结**：本章系统阐述了本体的四大核心组成要素（类、实例、属性、公理）及其形式化含义，并梳理了上层本体、领域本体、任务本体之间的区别。下一章 [第 4 章：RDF 数据模型](../ch04-rdf-data-model/index.md) 将深入理解 RDF（Resource Description Framework）数据模型的三元组结构。
+> **本章小结**：本章系统阐述了本体的四大核心组成要素（类、实例、属性、公理）及其形式化含义，并梳理了上层本体、领域本体、任务本体之间的区别。下一章 [第 4 章：RDF 数据模型](../ch04-rdf-data-model/01-rdf-introduction.md) 将深入理解 RDF（Resource Description Framework）数据模型的三元组结构。

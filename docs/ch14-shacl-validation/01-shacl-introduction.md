@@ -8,15 +8,18 @@
 
 在继续学习本章之前，建议先阅读以下内容：
 
-- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/index.md) — 属性定义与约束
-- [第 12 章：OWL 2 数据约束](../ch12-owl2-data-constraints/index.md) — 基数约束与值约束
+- [第 4 章：RDF 数据模型](../ch04-rdf-data-model/01-rdf-introduction.md) — RDF 三元组结构
+- [第 6 章：RDFS 核心](../ch06-rdfs-core/01-rdf-vocabulary.md) — 定义域与值域
+- [第 8 章：OWL 2 概述](../ch08-owl2-overview/01-why-owl2.md) — OWL 2 基础
+- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/01-object-data-properties.md) — 属性类型与特征
+- [第 12 章：OWL 2 数据约束](../ch12-owl2-data-constraints/01-cardinality-constraints.md) — 基数、值与数据类型约束
 
 ### ▶️ 继续阅读
 
 学习完本章后，可继续探索：
 
 - [第 14.2 节：形状定义](./02-shape-definition.md) — 定义形状、目标与约束
-- [第 16 章：开发生命周期](../ch16-development-lifecycle/index.md) — 本体的工程化开发流程
+- [第 16 章：开发生命周期](../ch16-development-lifecycle/01-lifecycle-phases.md) — 本体的工程化开发流程
 
 ## 1. SHACL 的定义与标准化历程
 
@@ -300,7 +303,7 @@ flowchart LR
     sh:result [
         a sh:ValidationResult ;
         sh:focusNode <http://example.org/person/001> ;
-        sh:SourceShape ex:PersonShape ;
+        sh:sourceShape ex:PersonShape ;
         sh:resultSeverity sh:Violation ;
         sh:resultMessage "必须至少有一个名字." ;
         sh:focusNode <http://example.org/person/001> ;

@@ -114,4 +114,4 @@ ex:Alice rdfs:label "Alice"
 
 ---
 
-> **下一章**：开启第 6 章 [RDFS 核心机制](../ch06-rdfs-core/index.md)——学习如何利用基础词汇表建立严谨的分类系统和层次关系，为后续深入学习OWL本体奠定基石。
+> **下一章**：开启第 6 章 [RDFS 核心机制](../ch06-rdfs-core/01-rdf-vocabulary.md)——学习如何利用基础词汇表建立严谨的分类系统和层次关系，为后续深入学习OWL本体奠定基石。

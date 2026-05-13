@@ -117,4 +117,4 @@ ex:EmployeeShape
 
 接下来，我们将开启第 5 章的学习，系统性地了解不同 RDF 序列化格式（Turtle, RDF/XML, JSON-LD）的特点、差异和适用场景。
 
-> [前往第 5 章 - RDF 序列化语法预览](../ch05-rdf-syntax/)
+> [前往第 5 章 - RDF 序列化语法预览](../ch05-rdf-syntax/01-serialization-overview.md)

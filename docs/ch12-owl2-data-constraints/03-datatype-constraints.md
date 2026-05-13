@@ -307,14 +307,22 @@ graph TB
         sh:maxInclusive "150"^^xsd:integer
     ] .
 
-# 出生日期不能在未来
-:PersonShape3 a sh:NodeShape ;
+# 注意：SHACL 1.0 规范不支持 sh:maxInclusive 结合 now() 表达式
+# 此验证需要使用 SHACL-SPARQL 实现动态比较
+# 以下是替代说明（使用 SPARQL CONSTRUCT 模式）
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://example.org/people#> .
+
+# SHACL-SPARQL 方式：检查出生日期不在未来
+:PersonBirthDateShape a sh:NodeShape ;
     sh:targetClass :Person ;
-    sh:property [
-        sh:path :hasBirthDate ;
-        sh:datatype xsd:date ;
-        sh:maxInclusive "now()"^^sh:datetimeLiteral ;
-        sh:message "出生日期不能晚于今天"
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:rule """
+            # 需通过 SHACL-SPARQL CONSTRAINT 实现
+            # 示例: sh:spdx [ sh:select 其中 BIRTH_DATE > CURRENT_DATE ]
+        """
     ] .
 ```
 
