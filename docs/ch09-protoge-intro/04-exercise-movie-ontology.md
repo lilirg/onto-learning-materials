@@ -238,14 +238,16 @@ graph TD
 :Movie owl:equivalentClass [
     a owl:Restriction ;
     owl:onProperty :directedBy ;
-    owl:minQualifiedCardinality 1 ^^ :Director
+    owl:minQualifiedCardinality 1 ;
+    owl:onClass :Director
 ] .
 
 # 约束 2: 每个人至少有一个名称
 :Person owl:equivalentClass [
     a owl:Restriction ;
     owl:onProperty :hasName ;
-    owl:minQualifiedCardinality 1 ^^ xsd:string
+    owl:minQualifiedCardinality 1 ;
+    owl:onDatatype xsd:string
 ] .
 
 # 约束 3: 电影评分最多只能有一个值
@@ -416,7 +418,8 @@ WHERE {
 :Movie owl:equivalentClass [
     a owl:Restriction ;
     owl:onProperty :directedBy ;
-    owl:minQualifiedCardinality 1 ^^ :Director
+    owl:minQualifiedCardinality 1 ;
+    owl:onClass :Director
 ] .
 
 ## === 个体 ===

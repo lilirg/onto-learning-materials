@@ -66,10 +66,21 @@ ex:Manager rdfs:subClassOf [
     owl:onClass ex:Employee
 ] .
 
-# 定义"部门"是"员工"的子类
-ex:Department rdfs:subClassOf ex:Employee .
+# ❗ 建模错误示例：部门不应是员工的子类
 
-# ❗ 矛盾检测：本体定义"部门属于员工"，
+# 在本体中，"部门"（Department）和"员工"（Employee）是不相交的两个概念类。
+# 如果误定义 "Department rdfs:subClassOf Employee"，当有实例 "ex:FinanceDepts rdfs:label 财务部" 被实例化为 Department 时，
+# 推理机会错误地将其归为 Employee 的实例，导致语义错误。
+
+# ✅ 正确做法：保持 Department 和 Employee 同为顶层子类的地位
+ex:Department a owl:Class .
+ex:Employee a owl:Class .
+ex:Department rdfs:subClassOf ex:OrganizationEntity .
+ex:Employee rdfs:subClassOf ex:Person .
+
+# ❗ 推理引擎可通过不相交公理检测到上述冲突
+# 若之后有人断言"财务部"是"Project"类型的实例，
+# 而Project和Employee是不相交的，则推理引擎会报一致性错误
 #    但如果有人断言"财务部"是"Project"类型的实例，
 #    而Project和Employee是不相交的，则推理引擎会报一致性错误
 ```
@@ -132,8 +143,7 @@ ex:treats rdfs:domain ex:Therapy ;
 ex:Insulin ex:treats ex:Diabetes .
 
 # 语义关系2："糖尿病"和"高血压"经常共病
-ex:coexistsWith a owl:ObjectProperty ;
-    owl:properties ex:symmetricProperty .
+ex:coexistsWith a owl:ObjectProperty , owl:SymmetricProperty .
 
 ex:Diabetes ex:coexistsWith ex:Hypertension .
 ```
@@ -188,7 +198,7 @@ ex:Mammal rdfs:subClassOf [
 ] .
 
 # 2. 不相交声明：猫和狗是不相交的类——一个人不可能既是猫又是狗
-owl:disjointUnionOf ( ex:Cat ex:Dog ) .
+ex:Cat owl:disjointWith ex:Dog .
 
 # 3. 传递关系：如果 A 是 B 的父亲，B 是 C 的父亲 → A 是 C 的祖父
 ex:fatherOf a owl:TransitiveProperty .
@@ -196,8 +206,12 @@ ex:fatherOf a owl:TransitiveProperty .
 # 4. 值约束：哺乳动物的寿命在 0 到 200 年之间
 ex:age a owl:DatatypeProperty ;
     rdfs:domain ex:Mammal ;
-    rds:range ex:PositiveInteger ;
-    owl:maxCardinality "200"^^xsd:integer .
+    rdfs:range ex:PositiveInteger ;
+    ex:Mammal rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty ex:age ;
+        owl:maxCardinality 200
+    ] .
 ```
 
 | 特征 | 分类法（Taxonomy） | 本体（Ontology） |

@@ -275,11 +275,11 @@ java -jar jena-shacl.jar \
     <artifactId>jena-ontology</artifactId>
     <version>4.10.0</version>
 </dependency>
-<!--  HermiT 推理机 -->
+<!-- HermiT 推理机 -->
 <dependency>
-    <groupId>de.fuberlin.wmi</groupId>
-    <artifactId>hermite-reasoner</artifactId>
-    <version>2.0.0</version>
+    <groupId>org.hermit-reasoner</groupId>
+    <artifactId>Hermit</artifactId>
+    <version>1.3.8</version>
 </dependency>
 ```
 
@@ -293,35 +293,35 @@ implementation 'org.apache.jena:jena-core:4.10.0'
 // Jena 本体库
 implementation 'org.apache.jena:jena-ontology:4.10.0'
 // HermiT 推理机
-implementation 'de.fuberlin.wmi:hermite-reasoner:2.0.0'
+implementation 'org.hermit-reasoner:Hermit:1.3.8'
 ```
 
 ### 5.3 Java 编程方式
 
 ```java
-import org.apache.jena.shacl.SHAACLGraph ;
-import org.apache.jena.shacl.Shacl . ;
-import org.apache.jena.shacl.Shapes ;
-import org.apache.jena.shacl.validation.ValidationReport ;
-import org.apache.jena.ontology.OntModel ;
-import org.apache.jena.ontology.OntModelSpec ;
-import org.apache.jena.vocabulary.RDFVocabulary ;
+import org.apache.jena.shacl.SHAACLGraph;
+import org.apache.jena.shacl.Shapes;
+import org.apache.jena.shacl.validation.ValidationReport;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.shacl.Shape;
+import java.io.FileInputStream;
 
 // 加载本体数据和 Shape 数据
-OntModel dataModel = OntModelFactory . createOntModel ( OntModelSpec . RDFS_MEM ) ;
-dataModel . read ( "file:movies.ttl" , "Turtle" ) ;
+OntModel dataModel = org.apache.jena.tuplespace.TupleSpaceFactory.createOntModel(OntModelSpec.RDFS_MEM);
+dataModel.read("file:movies.ttl", "Turtle");
 
-Shapes shapes = Shapes . createShapes ( Shape . read ( new FileInputStream ( "file:movies-shapes.ttl" ) , "Turtle" ) ;
+Shapes shapes = Shapes.createShapes(Shape.read(new FileInputStream("file:movies-shapes.ttl"), "Turtle"));
 
 // 执行 SHACL 验证
-ValidationReport report = Shape . validate ( dataModel , shapes ) ;
+ValidationReport report = Shape.validate(dataModel, shapes);
 
 // 输出结果
-if ( report . isValid ( ) ) {
-    System.out.println ( "Validation PASSED." ) ;
+if (report.isValid()) {
+    System.out.println("Validation PASSED.");
 } else {
-    System.out.println ( "Validation FAILED." ) ;
-    report . log ( System.out ) ;
+    System.out.println("Validation FAILED.");
+    report.log(System.out);
 }
 ```
 

@@ -20,14 +20,17 @@ OWL 2 类建模操作直接对应于数学集合论中的基本运算。掌握�
 
 ```turtle
 # 集合论在 OWL 中的表达方式
-# C ∩ D 对应于：
-:C ∩ :D owl:intersectionOf ( :C :D ) .
+# C ∩ D（交集类）：
+:Intersection_CD a owl:Class ;
+    owl:intersectionOf ( :C :D ) .
 
-# C ∪ D 对应于：
-:C ∪ :D owl:unionOf ( :C :D ) .
+# C ∪ D（联集类）：
+:Union_CD a owl:Class ;
+    owl:unionOf ( :C :D ) .
 
-# ̅C 对应于：
-:NOT_C owl:complementOf :C .
+#  ̅C（补集类）：
+:NOT_C a owl:Class ;
+    owl:complementOf :C .
 ```
 
 ---
@@ -90,10 +93,12 @@ OWL 2 支持多于两个类的交集运算：
 | 零元律 | A ⊓ ⊥ = ⊥ | 与空类交集为空的 |
 
 ```turtle
-# 交换律实例
-:ActorDirector owl:intersectionOf ( :Actor :Director ) .
-:DirectorActor owl:intersectionOf ( :Director :Actor ) .
-# 推理结果：ActorDirector ≡ DirectorActor
+# 交换律实例（推理机将推断二者等价）
+:ActorDirector a owl:Class ;
+    owl:intersectionOf ( :Actor :Director ) .
+:DirectorActor a owl:Class ;
+    owl:intersectionOf ( :Director :Actor ) .
+# 推理结果：推理机会将 ActorDirector 和 DirectorActor 标记为等价类（≡）
 ```
 
 ---

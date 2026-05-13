@@ -206,7 +206,7 @@ graph TD
 
 # === 2. Christopher Nolan ===
 :christopherNolan a :Director ;
-    :directs :Inception ;
+    :directedBy :Inception ;
     :birthYear 1970^^xsd:integer .
 
 # === 3. Tom Cruise ===
@@ -247,8 +247,9 @@ graph TD
     :releaseYear 2022^^xsd:integer .
 
 # === 9. 补充 ABox 数据，制造矛盾 ===
-# 给 :joshBrolin 添加 ScreenActor 类型
-:jo hBrolin a :ScreenActor .   # ⚠ 与 Actor 的 disjoints: TVActor/ScreenActor 矛盾
+# 给 :joshBrolin 添加 ScreenActor 类型（故意引入矛盾，用于调试练习）
+# 注意：:joshBrolin 已声明为 :Director，而 :Actor owl:disjointWith :Director
+:joshBrolin a :ScreenActor .   # ⚠ 触发矛盾：ScreenActor rdfs:subClassOf Actor，而 Actor 与 Director 不相交
 ```
 
 ### 2.2 故意引入的矛盾 Bug 说明
@@ -282,8 +283,8 @@ graph TD
 
 ```turtle
 :Actor      owl:disjointWith :Director .
-:jo hBrolin a :Actor .
-:jo hBrolin a :Director .  ← 矛盾！同一个人不能同时是 Actor 且 Director
+:joshBrolin a :Actor .
+:joshBrolin a :Director .  ← 矛盾！Actor 与 Director 声明为不相交类
 ```
 
 这是本体中最直接且最容易复现的矛盾。下面我们通过推理机验证这一点，并修复它。
@@ -338,7 +339,7 @@ graph TD
 │   │   │   └── Producer                     ← 类 I
 │   │   ├── CreativeWork                     ← 类 D
 │   │   │   └── Movie                        ← 类 L
-│   │   ├── Award                            ← 类 E
+│   │   ├── Award                            ← 类（在 Entity 之下）
 │   │   └── Genre                            ← 类 F
 ```
 
@@ -427,12 +428,10 @@ Individual :joshBrolin:
 # 方案 B1：移除 Actor-Director 的不相交约束
 # :Actor owl:disjointWith :Director . ← 注释或删除此公理
 
-# 方案 B2：添加新的复合类 :Filmmaker
-:Filmmaker owl:equivalentClass (
-    :Actor owl:intersectionOf ( :Director )
-) .
-# :Filmmaker rdfs:subClassOf :Actor .
-# :Filmmaker rdfs:subClassOf :Director .
+# 方案 B2：添加新的复合类 :Filmmaker（既能演又能导的角色）
+:Filmmaker owl:equivalentClass [
+    owl:intersectionOf ( :Actor :Director )
+] .
 ```
 
 **推荐修复方案 A**，因为在常规电影行业中，Actor（专业演员）和 Director（专职导演）作为两类不同的职业角色进行互斥管理是合理的建模选择。Josh Brolin 在本体中应仅作为导演建模。

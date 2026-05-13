@@ -154,13 +154,13 @@ Preferences → General → Plugin Folder
 
 | 阶段 | 学习目标 | 建议实践 | 参考章节 |
 |------|----------|----------|----------|
-| **阶段一：环境搭建** | 熟悉界面、基本导航、视图管理 | 安装 Java 与 Protégé，创建空本体，切换 5 种核心视图 | [`安装与创建`](docs/ch09-protoge-intro/02-installation-creation.md) |
-| **阶段二：基础建模** | 掌握类、属性、个体创建，标签与注释 | 构建精简电影本体，定义类层次与简单属性 | [`类与属性`](docs/ch09-protoge-intro/03-classes-properties.md) |
-| **阶段三：核心公理** | 子类、等效类、不相交类定义 | 构建披萨本体基础层次，添加 `subClassOf` / `equivalentClass` | [`类表达式`](docs/ch10-owl2-class-modeling/01-class-expressions.md), [`等价与不相交`](docs/ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
-| **阶段四：属性建模** | 对象/数据类型属性，传递性/对称性 | 为电影本体添加关系链与数据约束 | [`属性公理`](docs/ch11-owl2-property-axioms/01-object-data-properties.md) |
-| **阶段五：限制与约束** | 基数、存在/全称量化、数值范围 | 构建复杂条件查询本体的推导规则 | [`基数约束`](docs/ch12-owl2-data-constraints/01-cardinality-constraints.md) |
-| **阶段六：推理验证** | HermiT/Pellet 运行，冲突检查与实例解释 | 运行推理机，使用 `Query Reasoner` 调试推导路径 | [`推理与一致性`](docs/ch15-reasoning-consistency/02-reasoner-tools.md) |
-| **阶段七：插件与集成** | SWRL 规则、外部可视化、自动化批处理 | 编写 SWRL 规则，导出 Turtle/RDF/XML 到 SPARQL 端点 | [`快捷键工作流`](docs/appendix-b-protoge-shortcuts/), [`RDF 语法`](docs/appendix-d-rdf-syntax-comparison/) |
+| **阶段一：环境搭建** | 熟悉界面、基本导航、视图管理 | 安装 Java 与 Protégé，创建空本体，切换 5 种核心视图 | [`安装与创建`](../ch09-protoge-intro/02-installation-creation.md) |
+| **阶段二：基础建模** | 掌握类、属性、个体创建，标签与注释 | 构建精简电影本体，定义类层次与简单属性 | [`类与属性`](../ch09-protoge-intro/03-classes-properties.md) |
+| **阶段三：核心公理** | 子类、等效类、不相交类定义 | 构建披萨本体基础层次，添加 `subClassOf` / `equivalentClass` | [`类表达式`](../ch10-owl2-class-modeling/01-class-expressions.md), [`等价与不相交`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
+| **阶段四：属性建模** | 对象/数据类型属性，传递性/对称性 | 为电影本体添加关系链与数据约束 | [`属性公理`](../ch11-owl2-property-axioms/01-object-data-properties.md) |
+| **阶段五：限制与约束** | 基数、存在/全称量化、数值范围 | 构建复杂条件查询本体的推导规则 | [`基数约束`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
+| **阶段六：推理验证** | HermiT/Pellet 运行，冲突检查与实例解释 | 运行推理机，使用 `Query Reasoner` 调试推导路径 | [`推理与一致性`](../ch15-reasoning-consistency/02-reasoner-tools.md) |
+| **阶段七：插件与集成** | SWRL 规则、外部可视化、自动化批处理 | 编写 SWRL 规则，导出 Turtle/RDF/XML 到 SPARQL 端点 | [`快捷键工作流`](../appendix-b-protoge-shortcuts/), [`RDF 语法`](../appendix-d-rdf-syntax-comparison/) |
 
 ---
 

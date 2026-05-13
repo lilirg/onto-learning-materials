@@ -20,6 +20,8 @@
 | SHACL `sh:minLength/maxLength` | 字符串长度约束 | 姓名 2-50 字符 |
 
 > **重要提示**：SHACL 约束（`sh:pattern`、`sh:minLength` 等）用于数据验证，而 OWL 2 数据类型约束（`owl:onDatatype`）用于语义推理。两者相辅相成，各司其职。
+>
+> **关键区别**：`owl:withRestrictions` 仅用于约束已有 XSD 数据类型的子集，不会影响本体中该类型的实例集合（即不改变推理结果）。它主要用于语义标记和数据文档化。如需数据验证，应使用 SHACL。
 
 ### 1.2 类型约束与验证约束对比
 
@@ -109,18 +111,19 @@ graph TB
 ### 2.4 多重约束组合
 
 ```turtle
-# 年龄在 0 到 150 之间的整数
+# 年龄在 0 到 150 之间的整数（语义标记）
+# 注意：withRestrictions 不影响推理，仅用于文档化
 :ValidAge owl:onDatatype xsd:integer ;
     owl:withRestrictions (
         [ xsd:minInclusive "0"^^xsd:integer ] ,
         [ xsd:maxInclusive "150"^^xsd:integer ]
     ) .
 
-# 价格必须是非负小数，且最多两位小数
+# 价格必须是非负小数（OWL 无法约束小数位数）
+# 如需约束小数位数，应使用 SHACL sh:pattern 或 sh:maxInclusive
 :ValidPrice owl:onDatatype xsd:decimal ;
     owl:withRestrictions (
-        [ xsd:minInclusive "0"^^xsd:decimal ] ,
-        [ xsd:pattern "[0-9]+(\\.[0-9]{1,2})?" ]
+        [ xsd:minInclusive "0"^^xsd:decimal ]
     ) .
 ```
 

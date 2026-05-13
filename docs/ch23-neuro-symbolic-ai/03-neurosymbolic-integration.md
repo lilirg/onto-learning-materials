@@ -90,7 +90,7 @@ $$\hat{y} = \text{READOUT} \left( \{ h_v^{(K)} \mid \forall v \in G \} \right)$$
 
 ### 2.2 TransR/GNN（Knowledge Graph Convolutional Networks）
 
-[Knowledge Graph Convolutional Networks, KgCNN）](docs/ch15-reasoning-consistency/01-reasoning-basics.md)：
+**Knowledge Graph Convolutional Networks (KG-CNN)**：
 
 ```python
 # PyTorch Geometric (PyG) 风格伪代码：KG 上的 GCN
@@ -121,7 +121,7 @@ class KGConv(nn.Module):
 
 ### 2.4 GAT（Graph Attention Network）
 
-[GAT](docs/ch21-tool-ecosystem/04-research-platforms.md) 通过**注意力机制**为不同邻居节点分配不同权重：
+**GAT**（Graph Attention Network）通过**注意力机制**为不同邻居节点分配不同权重：
 
 $$\alpha_{ij} = \frac{\exp\left(\text{LeakyReLU}(a^T [Wh_i \parallel Wh_j])\right)}{\sum_{k \in \mathcal{N}_i} \exp\left(\text{LeakyReLU}(a^T [Wh_i \parallel Wh_k])\right)}$$
 

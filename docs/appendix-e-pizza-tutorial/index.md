@@ -16,14 +16,14 @@ PIZZA 本体是一个专为**教学和学习 OWL 2** 而设计的示例本体。
 
 | 学习目标 | 涉及的知识领域 |
 |----------|---------------|
-| 创建类和构建层次结构 | [`类层次结构`](docs/ch03-core-concepts/01-elements.md) |
-| 定义对象属性及其约束 | [`对象属性`](docs/ch11-owl2-property-axioms/01-object-data-properties.md) |
-| 使用数据类型属性 | [`数据类型属性`](docs/ch11-owl2-property-axioms/01-object-data-properties.md) |
-| 应用存在约束 (`someValuesFrom`) | [`存在约束`](docs/ch10-owl2-class-modeling/01-class-expressions.md) |
-| 应用全称约束 (`allValuesFrom`) | [`全称约束`](docs/ch10-owl2-class-modeling/01-class-expressions.md) |
-| 定义等价类和不相交类 | [`等价与不相交`](docs/ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
-| 使用基数约束 | [`基数约束`](docs/ch12-owl2-data-constraints/01-cardinality-constraints.md) |
-| 执行一致性检查与推理 | [`推理与一致性`](docs/ch15-reasoning-consistency/01-reasoning-basics.md) |
+| 创建类和构建层次结构 | [`类层次结构`](../ch03-core-concepts/01-elements.md) |
+| 定义对象属性及其约束 | [`对象属性`](../ch11-owl2-property-axioms/01-object-data-properties.md) |
+| 使用数据类型属性 | [`数据类型属性`](../ch11-owl2-property-axioms/01-object-data-properties.md) |
+| 应用存在约束 (`someValuesFrom`) | [`存在约束`](../ch10-owl2-class-modeling/01-class-expressions.md) |
+| 应用全称约束 (`allValuesFrom`) | [`全称约束`](../ch10-owl2-class-modeling/01-class-expressions.md) |
+| 定义等价类和不相交类 | [`等价与不相交`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
+| 使用基数约束 | [`基数约束`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
+| 执行一致性检查与推理 | [`推理与一致性`](../ch15-reasoning-consistency/01-reasoning-basics.md) |
 
 ### 1.3 PIZZA 本体的结构概览
 
@@ -527,15 +527,15 @@ PIZZA 本体类层次结构（简化版）
 
 | 特性 | PIZZA 中的应用 | 章节参考 |
 |------|---------------|----------|
-| 类层次 | 配料 → 蔬菜 → Mushroom | [`类层次`](docs/ch06-rdfs-core/02-subclass-subproperty.md) |
-| 对象属性 | hasIngredient, hasRegion | [`对象属性`](docs/ch11-owl2-property-axioms/01-object-data-properties.md) |
-| 数据类型属性 | weight, fatContent | [`数据类型约束`](docs/ch12-owl2-data-constraints/01-cardinality-constraints.md) |
-| 存在约束 | hasIngredient some Cheese | [`存在约束`](docs/ch10-owl2-class-modeling/01-class-expressions.md) |
-| 全称约束 | hasIngredient all VegetableTopping | [`全称约束`](docs/ch10-owl2-class-modeling/01-class-expressions.md) |
-| 等价类 | VeggiePizza 定义 | [`等价与不相交`](docs/ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
-| 不相交类 | Pizza 与 Ingredient 不相交 | [`不相交定义`](docs/ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
-| 基数约束 | 配料数量限制 | [`基数约束`](docs/ch12-owl2-data-constraints/01-cardinality-constraints.md) |
-| 传递属性 | (可选) ancestor 关系 | [`传递属性`](docs/ch11-owl2-property-axioms/03-property-hierarchy-chain.md) |
+| 类层次 | 配料 → 蔬菜 → Mushroom | [`类层次`](../ch06-rdfs-core/02-subclass-subproperty.md) |
+| 对象属性 | hasIngredient, hasRegion | [`对象属性`](../ch11-owl2-property-axioms/01-object-data-properties.md) |
+| 数据类型属性 | weight, fatContent | [`数据类型约束`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
+| 存在约束 | hasIngredient some Cheese | [`存在约束`](../ch10-owl2-class-modeling/01-class-expressions.md) |
+| 全称约束 | hasIngredient all VegetableTopping | [`全称约束`](../ch10-owl2-class-modeling/01-class-expressions.md) |
+| 等价类 | VeggiePizza 定义 | [`等价与不相交`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
+| 不相交类 | Pizza 与 Ingredient 不相交 | [`不相交定义`](../ch10-owl2-class-modeling/02-equivalent-disjoint.md) |
+| 基数约束 | 配料数量限制 | [`基数约束`](../ch12-owl2-data-constraints/01-cardinality-constraints.md) |
+| 传递属性 | (可选) ancestor 关系 | [`传递属性`](../ch11-owl2-property-axioms/03-property-hierarchy-chain.md) |
 
 ### 5.2 学习路径推荐
 

@@ -89,7 +89,10 @@
 
 :Male owl:disjointWith :Female .
 
-:HeroicMale owl:equivalentClass :Male :Hero .
+# 等价定义：HeroicMale ≡ Male ⊓ Hero
+:HeroicMale owl:equivalentClass [
+    owl:intersectionOf ( :Male :Hero )
+] .
 
 # === 个体声明 ===
 :ClarkKent a :Human ;
@@ -283,25 +286,17 @@ chapter-10/reasoning_validator.py
 
 from owlready2 import *
 
-# === 步骤一：加载本体 ===
-onto_path.insert(0, "../ch09-protoge-intro")  # 设置本体路径（根据实际情况调整）
-onto = get_ontology("movie-ontology.owl")
+# === 步骤一：加载本体（匹配本节的英雄本体 Hero Ontology） ===
+onto_path.insert(0, ".")  # 设置本体路径（根据实际情况调整）
+onto = get_ontology("http://example.org/hero-ontology.owl")
 onto.load()
 
-# === 步骤二：加载推理机 ===
-onto.set_based_on()  # 触发自动推理
+# === 步骤二：加载推理机与自动分类 ===
+# owlready2 默认会利用 Hermit 和 Pellet 进行推断，加载后自动分类
+default_world.set_options(hermit="hermit.jar")  # 指定 HermiT JAR 路径（如需要）
 
-try:
-    onto.get_implementation("hermit")
-except Exception:
-    # 如未找到 HermiT 可回退到默认的 pellet 或内置推理
-    print("⚠️ HermiT 推理机未找到，使用默认推理引擎...")
-
-# === 步骤三：自动分类 ===
+# === 步骤三：自动分类与输出 ===
 print("📌 步骤 1: 执行自动分类...")
-onto.classify()
-
-# 输出推断的类层次
 for cls in onto.classes():
     sub = list(cls.subclasses())
     if sub:
@@ -310,14 +305,15 @@ for cls in onto.classes():
 
 # === 步骤四：一致性检查 ===
 print("\n📌 步骤 2: 一致性检查...")
-if onto.is_consistent:
+is_consistent, _ = default_world.consistency()
+if is_consistent:
     print("  ✅ 本体一致，未发现矛盾")
 else:
     print("  ❌ 本体不一致！请检查不相交断言或等价定义")
 
 # === 步骤五：检测不可满足类 ===
 print("\n📌 步骤 3: 不可满足类检测...")
-unsatisfiable = list(get_unsatisfiable(onto))
+unsatisfiable = list(get_unsatisfiable_classes())
 if unsatisfiable:
     for cls in unsatisfiable:
         print(f"  ❌ 不可满足类: {cls}")
@@ -332,8 +328,8 @@ for ind in onto.Individuals():
     print(f"  {ind} ∈ {{ {type_names} }}")
 
 # === 清理与导出 ===
-save_path = "movie-ontology-reasoning-output.owl"
-onto.save(save_path, format=" rdf-xml")
+save_path = "hero-ontology-reasoning-output.owl"
+onto.save(save_path, format="rdf-xml")
 print(f"\n✅ 推理输出已保存至: {save_path}")
 ```
 
