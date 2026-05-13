@@ -14,13 +14,11 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-env:
-  NODE_VERSION: '20'
-
 jobs:
   build:
     name: Build VitePress
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,8 +28,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          node-version: '20'
+
+      - name: Configure npm mirror
+        run: npm config set registry https://registry.npmmirror.com
 
       - name: Cache VitePress .vitepress/cache
         uses: actions/cache@v4
@@ -42,10 +42,11 @@ jobs:
             ${{ runner.os }}-vitepress-
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --verbose
 
       - name: Build VitePress
         run: npm run docs:build
+        timeout-minutes: 5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
