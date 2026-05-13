@@ -270,9 +270,9 @@ NLP（自然语言处理）与本体有一个密切的合作关系：**本体为
 
 ### 阅读指引
 
-- [[01-overview|第1篇]]：从知识库到本体：知识表示的演进
-- [[02-definition|第2篇]]：Gruber 定义详解（形式化、显式、共享、概念化）
-- [[03-ontology-vs|第3篇]]：本体 vs 数据库 vs 词汇表 vs 分类法
+- [`01-overview`](./01-overview) — 从知识库到本体：知识表示的演进
+- [`02-definition`](./02-definition) — Gruber 定义详解（形式化、显式、共享、概念化）
+- [`03-ontology-vs`](./03-ontology-vs) — 本体 vs 数据库 vs 词汇表 vs 分类法
 
 ---
 

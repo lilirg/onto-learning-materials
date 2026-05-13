@@ -311,6 +311,6 @@ flowchart LR
 
 ### 阅读指引
 
-- [[01-overview|第1篇]]：了解"什么是本体"的演进背景和动机
-- [[02-definition|第2篇]]：Gruber 定义详解：形式化、显式、共享与概念化
-- [[04-applications|第4篇]]：本体的实际应用领域和案例分析
+- [`01-overview`](./01-overview) — 了解"什么是本体"的演进背景和动机
+- [`02-definition`](./02-definition) — Gruber 定义详解：形式化、显式、共享与概念化
+- [`04-applications`](./04-applications) — 本体的实际应用领域和案例分析
