@@ -118,9 +118,22 @@ flowchart LR
 :hasISBN a owl:DataProperty ;
     rdfs:label "hasISBN"@en ;
     rdfs:domain :Book ;
-    rdfs:range xsd:string ;
-    owl:whiteValueMatches "^[0-9-]{13}$"^^xsd:regexp .
+    rdfs:range xsd:string .
 ```
+
+> **注意**：ISBN 格式验证（正则表达式 `^[0-9-]{13}$`）应使用 **SHACL** 而非 OWL 2 属性。OWL 2 不原生支持字符串正则约束。SHACL 示例见下：
+> ```turtle
+> @prefix sh: <http://www.w3.org/ns/shacl#> .
+>
+> :BookShape a sh:NodeShape ;
+>     sh:targetClass :Book ;
+>     sh:property [
+>         sh:path :hasISBN ;
+>         sh:datatype xsd:string ;
+>         sh:pattern "^[0-9-]{13}$" ;
+>         sh:message "ISBN 必须是 13 位数字或连字符格式"
+>     ] .
+> ```
 
 **输出**：
 - 本体源文件（`.owl` / `.ttl`）

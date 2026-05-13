@@ -212,9 +212,13 @@ graph TD
         owl:unionOf ( :Doctor :Lawyer )
     )]
     # ≥ 2 hasChild .Person
-    [ onProperty :hasChild ; minQualifiedCardinality 2 ^^ :Person ]
+    [ onProperty :hasChild ;
+      minQualifiedCardinality 2 ;
+      owl:onClass :Person ]
     # ≤ 1 hasSpouse .Person
-    [ onProperty :hasSpouse ; maxQualifiedCardinality 1 ^^ :Person ]
+    [ onProperty :hasSpouse ;
+      maxQualifiedCardinality 1 ;
+      owl:onClass :Person ]
 ) .
 ```
 

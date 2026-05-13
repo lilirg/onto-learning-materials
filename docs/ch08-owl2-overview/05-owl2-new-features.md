@@ -72,16 +72,20 @@ OWL 2 大幅增强了字符串和数值的约束能力。
 ### 3.1 字符串约束
 
 ```turtle
-# 定义合法的 email 格式
-:EmailAddress owl:equivalentClass (
-    xsd:string
-    owl:oneOf (
-        [ a owl:Restriction ;
-          onProperty xsd:string ;
-          owl:regexPredicate "^[\\w.-]+@[\\w.-]+\\.[a-z]{2,}$"^^xsd:regex ]
-    )
-) .
+# 定义合法的 email 格式（使用 SHACL 验证）
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:EmailAddressShape a sh:NodeShape ;
+    sh:targetClass :EmailAddress ;
+    sh:property [
+        sh:path xsd:string ;
+        sh:pattern "^[\\w.-]+@[\\w.-]+\\.[a-z]{2,}$" ;
+        sh:datatype xsd:string
+    ] .
 ```
+
+> **注意**：OWL 2 本身不原生支持正则表达式约束，应使用 SHACL 或 Shape Expressions (ShEx) 进行高级数据验证。
 
 ### 3.2 数值范围约束
 
@@ -95,15 +99,18 @@ OWL 2 大幅增强了字符串和数值的约束能力。
 
 ### 3.3 约束总览
 
-| 约束 | 说明 | 示例值 |
-|------|------|--------|
-| `owl:allValuesFrom` | 值必须在指定数据类型内 | `minInclusive: 0` |
-| `owl:maxInclusive` | 小于等于指定值 | `maxInclusive: 150` |
-| `owl:minInclusive` | 大于等于指定值 | `minInclusive: 0` |
-| `owl:maxExclusive` | 严格小于指定值 | `maxExclusive: 1` |
-| `owl:pattern` | 正则表达式匹配 | `^[0-9]{3}-[0-9]{4}$` |
-| `owl:minLength` | 最小字符数 | 3 |
-| `owl:maxLength` | 最大字符数 | 100 |
+| 约束类型 | 所属标准 | 说明 | 示例值 |
+|----------|----------|------|--------|
+| `owl:minQualifiedCardinality` | OWL 2 | 至少需要 N 个值 | `1` |
+| `owl:maxQualifiedCardinality` | OWL 2 | 最多允许 N 个值 | `10` |
+| `owl:qualifiedCardinality` | OWL 2 | 恰好 N 个值 | `1` |
+| `sh:minInclusive` | SHACL | 小于等于指定值 | `150` |
+| `sh:maxInclusive` | SHACL | 大于等于指定值 | `0` |
+| `sh:minLength` | SHACL | 最小字符数 | 3 |
+| `sh:maxLength` | SHACL | 最大字符数 | 100 |
+| `sh:pattern` | SHACL | 正则表达式匹配 | `^[0-9]{3}-[0-9]{4}$` |
+
+> **注意**：`minInclusive`、`maxInclusive`、`pattern`、`minLength`、`maxLength` 等是 **SHACL** 约束，不是 OWL 2 属性。OWL 2 的数据类型约束主要通过 `owl:onDatatype` 和基数约束实现。
 
 ---
 

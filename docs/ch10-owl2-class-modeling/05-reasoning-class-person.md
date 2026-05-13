@@ -26,11 +26,17 @@
 
 :Human a owl:Class .
 
-:Male owl:equivalentClass ( :Human [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderMale ] ) .
-:Female owl:equivalentClass ( :Human [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderFemale ] ) .
+# 最佳实践：使用 rdfs:subClassOf 替代 owl:equivalentClass
+:Male rdfs:subClassOf :Human .
+:Male rdfs:subClassOf [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderMale ] .
+
+:Female rdfs:subClassOf :Human .
+:Female rdfs:subClassOf [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderFemale ] .
+
 :Male owl:disjointWith :Female .
 
-:Hero owl:equivalentClass ( :Human [ owl:onProperty :hasPower ; owl:someValuesFrom :Superpower ] ) .
+:Hero rdfs:subClassOf :Human .
+:Hero rdfs:subClassOf [ owl:onProperty :hasPower ; owl:someValuesFrom :Superpower ] .
 
 :Superman a :Hero , :Male .
 :Superman owl:sameAs :ClarkKent .
@@ -74,11 +80,16 @@
     rdfs:range :Superpower .
 
 # === 等价声明 ===
-:Male owl:equivalentClass ( :Human [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderMale ] ) .
-:Female owl:equivalentClass ( :Human [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderFemale ] ) .
+# 最佳实践：使用 rdfs:subClassOf + Restriction 替代 owl:equivalentClass
+:Male rdfs:subClassOf :Human .
+:Male rdfs:subClassOf [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderMale ] .
+
+:Female rdfs:subClassOf :Human .
+:Female rdfs:subClassOf [ owl:onProperty :hasGender ; owl:someValuesFrom :GenderFemale ] .
+
 :Male owl:disjointWith :Female .
 
-:HeroicMale owl:equivalentClass ( :Male ⊓ :Hero ) .
+:HeroicMale owl:equivalentClass :Male :Hero .
 
 # === 个体声明 ===
 :ClarkKent a :Human ;

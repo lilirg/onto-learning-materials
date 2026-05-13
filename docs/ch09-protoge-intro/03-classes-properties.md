@@ -207,21 +207,23 @@ graph TD
 
 ```turtle
 # 例子：每个电影必须有至少一个导演
-:Movie owl:equivalentClass [
+:Movie rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty :directedBy ;
-    owl:minQualifiedCardinality 1 ^^ :Director
+    owl:minQualifiedCardinality 1 ;
+    owl:onClass :Director
 ] .
 
 # 例子：导演最多可以有一个生物母亲
-:Director owl:equivalentClass [
+:Director rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty :hasBiologicalMother ;
-    owl:maxQualifiedCardinality 1 ^^ :Person
+    owl:maxQualifiedCardinality 1 ;
+    owl:onClass :Person
 ] .
 
-# 例子：演员出演的电影
-:Actor owl:equivalentClass [
+# 例子：演员必须至少出演过一部电影
+:Actor rdfs:subClassOf [
     a owl:Restriction ;
     owl:onProperty :actedIn ;
     owl:someValuesFrom :Movie
