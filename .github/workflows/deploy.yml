@@ -19,6 +19,7 @@ env:
 
 jobs:
   build:
+    name: Build VitePress
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -30,10 +31,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          cache: 'npm'
+
+      - name: Cache VitePress .vitepress/cache
+        uses: actions/cache@v4
+        with:
+          path: .vitepress/cache
+          key: ${{ runner.os }}-vitepress-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-vitepress-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build VitePress
         run: npm run docs:build
@@ -44,6 +53,7 @@ jobs:
           path: .vitepress/dist
 
   deploy:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     environment:
