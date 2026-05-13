@@ -7,7 +7,14 @@ export default withMermaid({
   lang: 'zh-CN',
   lastUpdated: true,
   cleanUrls: true,
+  base: '/onto-learning-materials/',
   srcDir: 'docs',
+  head: [
+    ['meta', { name: 'keywords', content: '本体论,ontology,RDF,OWL,SPARQL,SHACL,知识图谱,语义网,W3C,Protégé' }],
+    ['meta', { name: 'author', content: 'Ontology Learning Materials Contributors' }],
+    ['meta', { name: 'og:type', content: 'website' }],
+    ['meta', { name: 'og:locale', content: 'zh_CN' }],
+  ],
   markdown: {
     config: (md) => {
       // 允许图片相对路径
