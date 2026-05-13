@@ -9,12 +9,14 @@
 本练习使用一个完整的电影本体（Movie Ontology），其中包含建模故意引入的逻辑矛盾，需要建模者通过推理机的诊断能力发现问题并修复。
 
 **学习目标**：
+
 1. **完整推理链路**：在电影本体上运行 HermiT 推理机，执行从 Classification 到 Consistency Check 的全流程
 2. **矛盾调试实战**：发现并修复本体中的逻辑错误（不一致性 Bug）
 3. **推理工具对比**：对比 ELK 和 HermiT 在处理同一本体时的性能差异
 4. **Prof ile 实验**：探索 EL Profile 与 DL Profile 的适用范围差异
 
 **前置条件**：
+
 - 已安装 Protégé v6.x（内置 Openllet 推理机）
 - 已安装 HermiT Plugin 或 Pellet Plugin
 - 已阅读本章第 1-3 节（基础知识、推理机工具、推理任务详解）
@@ -26,6 +28,7 @@
 ### 1.1 创建本体项目
 
 **操作步骤**：
+
 1. 启动 Protégé v6.x → `File` → `New Project`
 2. 设置本体 IRI：`http://example.org/movie-ontology#`
 3. 点击 `OK` 创建新项目
@@ -93,18 +96,20 @@ graph TD
 
 ```turtle
 # ScreenActor 的等价定义：既是 Actor 又有 actsIn 指向 Movie
-:ScreenActor owl:equivalentClass (
-    :Actor owl:intersectionOf (
+:ScreenActor owl:equivalentClass [
+    owl:intersectionOf (
         [ owl:onProperty :actsIn ; owl:someValuesFrom :Movie ]
+        :Actor
     )
-) .
+] .
 
 # TVActor 的等价定义：既是 Actor 又有 appearsIn 指向 TVShow
-:TVActor owl:equivalentClass (
-    :Actor owl:intersectionOf (
+:TVActor owl:equivalentClass [
+    owl:intersectionOf (
         [ owl:onProperty :appearsIn ; owl:someValuesFrom :TVShow ]
+        :Actor
     )
-) .
+] .
 ```
 
 **注意**：在 TBox 中先不创建 `TVShow` 类（稍后我们将看到它如何影响一致性）。
@@ -201,7 +206,7 @@ graph TD
 
 # === 2. Christopher Nolan ===
 :christopherNolan a :Director ;
-    :directedBy :Inception ;  # ⚠ 这里故意使用错误的属性名
+    :directs :Inception ;
     :birthYear 1970^^xsd:integer .
 
 # === 3. Tom Cruise ===
@@ -222,7 +227,7 @@ graph TD
     :birthYear 1966^^xsd:integer .
 
 # === 6. Josh Brolin ===
-:jo hBrolin a :Director , :Actor ;  # 同时是导演和演员
+:joshBrolin a :Director , :Actor ;  # 同时是导演和演员
     :birthYear 1968^^xsd:integer .
 
 # === 7. Won Oscar ===
@@ -253,23 +258,28 @@ graph TD
 **Bug 1：个体分类冲突（Individual Type Conflict）**
 
 `:joshBrolin` 在代码中被声明为：
+
 ```turtle
 :jo hBrolin a :Director , :Actor .
 :jo hBrolin a :ScreenActor .
 ```
+
 由于声明了 `:ScreenActor owl:disjointWith :TVActor` 以及 `:ScreenActor owl:disjointWith :Actor`（注意：我们没有直接对 `ScreenActor` 声明和 `Actor` 不相交，但推理机会从等价定义推断类型），这本身不一定矛盾。
 
 **真正的矛盾 Bug 在于 :kathyGriffith**：
+
 ```turtle
 :kathyGriffith a :Actor .
 :kathyGriffith a :TVActor .
 :kathyGriffith :appearsIn :LateNightShow .
 ```
+
 同时我们还声明了 `ScreenActor owl:disjointWith TVActor`，如果 `:kathyGriffith` 还隐式被推断为 `ScreenActor`（比如存在一个 `:actsIn` 的属性关系指向一个 `:Movie` 类个体），则会产生矛盾。
 
 **Bug 2（更直接）：违反不相交属性域断言**
 
 `:joshBrolin` 声明同时是 `:Director` 和 `:Actor`：
+
 ```turtle
 :Actor      owl:disjointWith :Director .
 :jo hBrolin a :Actor .
@@ -285,6 +295,7 @@ graph TD
 ### 3.1 启动 HermiT 推理机
 
 **操作指引**：
+
 1. 在 Protégé 顶部的 `Reason` 面板中，从 `Reasoner` 下拉菜单选择 `HermiT`
 2. 点击 `Start Reasoner` 按钮
 3. 观察底部状态栏，显示 `Reasoner status: Ready` 表示推理机已成功启动
@@ -309,6 +320,7 @@ graph TD
 ### 3.2 任务一：执行 Classification（类分类）
 
 **操作步骤**：
+
 1. 点击 Reasoner 面板中的 `Compute Class Hierarchy`
 2. 切换到顶部的 `Inferred` 标签页
 3. 观察 Inferred Class Hierarchy 与 Viewed 的区别
@@ -338,6 +350,7 @@ graph TD
 ### 3.3 任务二：执行 Consistency Check（一致性检查）
 
 **操作步骤**：
+
 1. 确保 HermiT Reasoner 已启动
 2. 点击 `Check Consistency` 按钮
 3. 观察弹出的检查结果
@@ -350,6 +363,7 @@ Ontology is INCONSISTENT.
 ```
 
 **进一步诊断不可满足类**：
+
 1. 在左侧面板展开 `Inferences` → `Inconsistent Classes`
 2. Protégé 将列出不可满足的类
 
@@ -385,6 +399,7 @@ Individual :joshBrolin:
 **步骤 2**：在左侧 `Individuals` 面板中选择矛盾个体 `:joshBrolin`。
 
 **步骤 3**：在右侧详细信息面板中，查看 `Inferred Types`，确认冲突的两个类：
+
 - `:Actor` 与 `:Director` 在 `Disjoint With` 中声明为不相交
 
 **步骤 4**：定位错误的断言来源——查看代码编辑器或 TBox 中的公理定义。
@@ -401,7 +416,7 @@ Individual :joshBrolin:
 
 # 修复后（移除 Actor 类型）
 :joshBrolin a :Director , :Person .
-:joshBrolin :directedMovie :MovieA , :MovieB .  # 用属性关联电影
+:joshBrolin :directs :MovieA , :MovieB .  # 用属性关联电影
 ```
 
 **修复方案 B：创建允许复合角色的新类**
@@ -425,6 +440,7 @@ Individual :joshBrolin:
 ### 4.3 验证修复结果
 
 **操作步骤**：
+
 1. 保存修改后的本体文件
 2. 点击 Reasoner 面板中的 `Recompute All` 或 `Stop Reasoner` → 再 `Start Reasoner`
 3. 再次运行 `Check Consistency`

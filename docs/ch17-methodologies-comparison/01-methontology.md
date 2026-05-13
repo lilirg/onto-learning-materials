@@ -148,7 +148,7 @@ flowchart TB
 
 ### 2.4 阶段四：集成（Integration）
 
-**集成（Integration）** 是最容易被忽视的关键阶段——它要求建模者在正式构建之前，**先检查现有本体**，看是否有可复用的部分。Methonolgy 强烈提倡 **Not Invented Here（NIH，"非我发明"） syndrome 的陷阱。
+**集成（Integration）** 是最容易被忽视的关键阶段——它要求建模者在正式构建之前，**先检查现有本体**，看是否有可复用的部分。Methontology 强烈提倡 **避免 Not Invented Here（NIH，"非我发明"）** 综合征陷阱。
 
 **核心活动**：
 

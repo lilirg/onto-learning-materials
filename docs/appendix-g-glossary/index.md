@@ -65,9 +65,9 @@
 | **Owl:ObjectProperty** | OWL 对象属性 | — | 连接两个个体的 OWL 属性：`owl:ObjectProperty`。 |
 | **Owl:NamedIndividual** | OWL 命名个体 | — | 声明唯一命名个体：`owl:NamedIndividual`。 |
 | **OWL (Web Ontology Language)** | Web 本体语言 | — | W3C 推荐的用于定义与推理 Web 本体的语言标准，包含 Profiles (EL, QL, DL)。 |
-| **OWL EL** | OWL EL 配置 | — | 支持高效多项式推理的本体片段；适合大规模类层次与属性链。 |
-| **OWL QL** | OWL QL 配置 | — | 支持映射到关系数据库进行查询优化的配置片段。 |
-| **OWL DL** | OWL Description Logic 配置 | — | 支持完整推理性保证的标准 OWL 子集。 |
+| **OWL EL** | OWL EL 概要/片段 | — | 支持高效多项式推理的本体片段；适合大规模类层次与属性链。 |
+| **OWL QL** | OWL QL 概要/片段 | — | 支持映射到关系数据库进行查询优化的概要/片段。 |
+| **OWL DL** | OWL DL (Description Logic Configuration) | — | 支持完整推理性保证的标准 OWL 子集。 |
 | **Open World Assumption (OWA)** | 开放世界假设 | — | 无法证实或不证的陈述均不被假定为真或假，留作后续扩展。RDF/OWL 的核心假设。 |
 | **Opaque Property** | 不透明属性 | — | 属性的命名不包含其语义细节，仅用于结构。 |
 | **Ordering Property** | 有序属性 | — | 值按特定顺序排列的属性约束。 |
@@ -99,6 +99,13 @@
 | **Undecidability** | 不可判定性 | 逻辑基础 | 某些逻辑问题不存在通用算法能够永远在有限时间内得出确定答案。 |
 | **Unification** | 统一 | 逻辑基础 | 描述逻辑推理中通过代换使多个原子达到一致的过程。 |
 | **Untyped Property** | 无类型属性 | — | 不对属性值作类型限定（即不对 `range` 作约束）。 |
+| **TBox** | 术语集 | Terminological Box | 本体中关于概念（类、属性、公理）的声明部分，描述概念的抽象结构 |
+| **ABox** | 断言集 | Assertional Box | 本体中关于具体个体（实例）的断言部分，描述个体的实例关系和属性值 |
+| **SHACL** | 形状约束语言 | Shapes Constraint Language | W3C 推荐的 RDF 图形状语言，用于验证 RDF 数据是否符合特定语义约束规范 |
+| **Shape** | 形状 | Shape | SHACL 中的约束定义单元，描述特定类或资源应满足的属性和值约束条件 |
+| **NodeShape** | 节点形状 | Node Shape | SHACL 中表示针对特定 RDF 资源节点验证所有约束条件的形状声明 |
+| **PropertyShape** | 属性形状 | Property Shape | SHACL 中表示针对特定属性的所有值进行验证的形状声明 |
+| **Constraint** | 约束 | Constraint | 对 RDF 图中的资源属性值范围、数量或类型做出限制的条件声明 |
 | **Validity of a Knowledge Base** | 知识库有效性 | — | 知识库存在至少一个满足所有公理约束的模型的性质。 |
 | **Virtual Database** | 虚拟数据库 | — | 多数据源之上的逻辑映射层：使用虚拟本体接口统一不同知识源查询。 |
 | **World (of Models)** | 模型世界 | 逻辑基础 | 描述逻辑中满足本体公理约束的一个模型集合；OWA 下存在多个可能的世界。 |
@@ -109,7 +116,9 @@
 
 | 中文 | 英文备选 |
 |------|---------|
-| 本体 | Ontology / 知识库 / 知识域 (Knowledge Domain) |
+| 本体 | Ontology |
+| 知识库 | Knowledge Base |
+| 知识域 | Knowledge Domain |
 | 知识图谱 | Knowledge Graph (KG) |
 | 语义网 | Semantic Web |
 | 资源描述框架 | RDF (Resource Description Framework) |

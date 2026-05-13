@@ -118,20 +118,16 @@ public class QualityCheckExample {
         );
 
         // 2. 创建推理器 (使用 Hermit 推理器)
-        OWLReasonerFactory reasonerFactory = new ReasonerReasonerFactory();
+        OWLReasonerFactory reasonerFactory = new HermiTReasonerFactory();
         OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
 
         // 3. 一致性检查 (Consistency Check)
         boolean isConsistent = reasoner.isConsistent();
         System.out.println("本体一致性状态: " + (isConsistent ? "✓ 一致" : "✗ 不一致"));
 
-        // 4. 如果发现不一致，定位原因
+        // 4. 定位不一致来源: 计算不可满足类
         if (!isConsistent) {
-            Set<InferenceFailureInfo> failures = reasoner.getInferenceFailures();
-            System.out.println("冲突公理数: " + failures.size());
-            for (InferenceFailureInfo failure : failures) {
-                System.out.println("  冲突类型: " + failure.getFailureReason());
-            }
+            System.out.println("检测到不一致——请检查 ABox 断言与 TBox 不相交公理");
         }
 
         // 5. 可满足性检查: 查找未可满足的类 (Unsatisfiable Classes)
