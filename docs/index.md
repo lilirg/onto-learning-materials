@@ -6,7 +6,7 @@ hero:
   text: 系统教材
   tagline: 从哲学基础到神经符号 AI，系统掌握 W3C 语义网标准技术栈
   image:
-    src: /logo.svg
+    src: ./logo.svg
     alt: Ontology Learning Materials
     height: 160px
   actions:
