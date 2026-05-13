@@ -10,7 +10,6 @@ export default withMermaid({
   base: '/onto-learning-materials/',
   srcDir: 'docs',
   head: [
-    ['link', { rel: 'icon', href: '/logo.svg' }],
     ['meta', { name: 'keywords', content: '本体论,ontology,RDF,OWL,SPARQL,SHACL,知识图谱,语义网,W3C,Protégé' }],
     ['meta', { name: 'author', content: 'Ontology Learning Materials Contributors' }],
     ['meta', { name: 'og:type', content: 'website' }],

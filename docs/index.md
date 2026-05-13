@@ -5,10 +5,6 @@ hero:
   name: 本体论与语义网
   text: 系统教材
   tagline: 从哲学基础到神经符号 AI，系统掌握 W3C 语义网标准技术栈
-  image:
-    src: ./logo.svg
-    alt: Ontology Learning Materials
-    height: 160px
   actions:
     - theme: brand
       text: 开始学习
