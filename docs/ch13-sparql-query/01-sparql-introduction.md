@@ -4,6 +4,21 @@
 
 ---
 
+### 🔗 前置知识
+
+在继续学习本章之前，建议先阅读以下内容：
+
+- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/index.md) — 属性定义与约束
+- [第 10 章：OWL 2 类建模](../ch10-owl2-class-modeling/index.md) — 类表达式与等价定义
+- [第 4 章：RDF 数据模型](../ch04-rdf-data-model/index.md) — 三元组与资源
+
+### ▶️ 继续阅读
+
+学习完本章后，可继续探索：
+
+- [第 13.2 节：基本图模式查询](./02-basic-graph-patterns.md) — 深入三元组模式（Triple Pattern）、基本图模式（BGP）等
+- [第 14 章：SHACL 数据验证](../ch14-shacl-validation/index.md) — 如何使用 SHACL 验证 RDF 数据
+
 ## 1. SPARQL 的定义与历史
 
 **SPARQL**（SPARQL Protocol and Query Language，SPARQL 协议与查询语言）是 W3C 推荐的**语义网（Semantic Web）** RDF 数据查询标准语言，被誉为"RDF 数据库上的 SQL"。
@@ -432,3 +447,17 @@ LIMIT 252
 ---
 
 > **下一章**：[13.2 基本图模式查询](./02-basic-graph-patterns.md) — 深入三元组模式（Triple Pattern）、基本图模式（BGP）、变量匹配、OPTIONAL、FILTER、LIMIT/OFFSET 及 ORDER BY 等图模式查询技术。
+
+## 💡 在线验证
+
+以下链接可将本节的代码粘贴到在线 RDF/SPARQL 验证器中进行语法检查：
+
+- [Virtuoso Online SPARQL Editor](https://virtuoso.openlinksw.com/dataspace/dav/wiki/Open/VOS/WebQueryEditor/)
+- [RDFg — Turtle Editor & Validator](https://rdfg.org/)
+- [Turtle Validator Online](https://semrobot.net/turtle-validator/)
+
+**使用方式**：
+1. 复制上方的任意一个代码块
+2. 粘贴到上述任意一个验证器的输入框中
+3. 点击"Parse"或"Validate"按钮
+4. 若解析成功则说明语法符合相关 W3C 规范

@@ -1,0 +1,35 @@
+# 本文件提供教材中所有使用的命名空间前缀统一参考
+# 在各章示例中可参考此文件保持一致的前缀定义
+# 引用方式：在 Turtle 文件或代码块开头添加本文件的 @prefix 声明
+
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix bfo:   <http://purl.obolibrary.org/obo/BFO_> .
+@prefix csvw:  <http://www.w3.org/ns/csvw#> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+@prefix geo:   <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix time:  <http://www.w3.org/2006/time#> .
+@prefix wdt:   <http://www.wikidata.org/prop/direct/> .
+@prefix wbv:   <http://www.wikidata.org/prop/bv/> .
+@prefix wdv:   <http://www.wikidata.org/value/> .
+@prefix wdth:  <http://www.wikidata.org/prop/direct-normalized> .
+@prefix wdref: <http://www.wikidata.org/reference/> .
+@prefix wdset: <http://www.wikidata.org/prop/set/> .
+@prefix wditem: <http://www.wikidata.org/entity/>, http://www.wikidata.org/entity/Q .
+@prefix wd:    <http://www.wikidata.org/entity/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix dbp:   <http://dbpedia.org/ontology/> .
+@prefix dbo:   <http://dbpedia.org/ontology/> .
+@prefix dbo:   <http://dbpedia.org/ontology/> .
+@prefix dbprop:<http://dbpedia.org/property/> .
+@prefix dbr:   <http://dbpedia.org/resource/> .
+@prefix virtuoso: <http://virtuoso.openlinksw.com/ns/virto#> .

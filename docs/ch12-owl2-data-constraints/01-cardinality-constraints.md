@@ -344,3 +344,17 @@ graph TD
 | DL 对应 | `(≥ n R)` ↔ `minCardinality`，`(≤ n R)` ↔ `maxCardinality` |
 | 推理效果 | 最小基数 → 一致性检查（缺失断言时） | 最大基数 → 个体等价推断 |
 | 与 OWL 1 对比 | OWL 2 的限定基数是新增功能，需配合 `onDatatype` 或 `onClass` |
+
+## 💡 在线验证
+
+以下链接可将本节的 Turtle 代码粘贴到在线 RDF 验证器中进行语法检查：
+
+- [Virtuoso Online SPARQL Editor](https://virtuoso.openlinksw.com/dataspace/dav/wiki/Open/VOS/WebQueryEditor/)
+- [RDFg — Turtle Editor & Validator](https://rdfg.org/)
+- [Turtle Validator Online](https://sem robot.net/turtle-validator/)
+
+**使用方式**：
+1. 复制上方的任意一个 Turtle 代码块
+2. 粘贴到上述任意一个验证器的输入框中
+3. 点击"Parse"或"Validate"按钮
+4. 若解析成功则说明语法符合 W3C RDF 1.1 规范

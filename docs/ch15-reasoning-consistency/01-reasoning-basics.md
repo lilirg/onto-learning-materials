@@ -4,6 +4,21 @@
 
 ---
 
+### 🔗 前置知识
+
+在继续学习本章之前，建议先阅读以下内容：
+
+- [第 8 章：OWL 2 概述](../ch08-owl2-overview/index.md) — 描述逻辑与 OWA/CWA 概念
+- [第 12 章：OWL 2 数据约束](../ch12-owl2-data-constraints/index.md) — 基数约束与公理
+- [第 4 章：RDF 数据模型](../ch04-rdf-data-model/index.md) — 三元组与资源
+
+### ▶️ 继续阅读
+
+学习完本章后，可继续探索：
+
+- [第 15.2 节：推理机工具](./02-reasoner-tools.md) — 主流推理机配置与使用
+- [第 18 章：质量评估](../ch18-quality-assessment/index.md) — 本体的质量评估维度
+
 ## 1. 推理（Reasoning）的本体论基础
 
 **推理**（Reasoning）是本体论（Ontology）与逻辑学（Logic）中的核心概念，指从已知的知识（前提、公理）出发，通过逻辑规则推导出新的知识（结论、隐式知识）的过程。

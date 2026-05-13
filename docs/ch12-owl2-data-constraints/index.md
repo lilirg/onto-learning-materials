@@ -72,10 +72,18 @@ graph LR
 
 本章内容依赖以下先修知识：
 
-- **第 8 章** OWL 2 概述 — 基本概念、RDF 基础
-- **第 11 章** OWL 2 属性公理 — 对象属性与数据属性的定义
+- [第 8 章：OWL 2 概述](../ch08-owl2-overview/index.md) — 基本概念、RDF 基础
+- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/index.md) — 对象属性与数据属性的定义
 
 ---
+
+### ▶️ 继续阅读
+
+学习完本章后，可继续探索：
+
+- [第 13 章：SPARQL 查询语言](../ch13-sparql-query/index.md) — 如何使用 SPARQL 查询本体数据
+- [第 14 章：SHACL 数据验证](../ch14-shacl-validation/index.md) — 如何使用 SHACL 验证 RDF 数据
+- [第 16 章：开发生命周期](../ch16-development-lifecycle/index.md) — 本体的工程化开发流程
 
 ## 4. 本章小结
 

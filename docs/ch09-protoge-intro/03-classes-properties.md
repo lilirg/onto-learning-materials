@@ -237,3 +237,17 @@ graph TD
 3. 点击 **Create Restriction** 按钮
 4. 选择约束类型（Complement Of、Intersection Of、Union Of、Restriction）
 5. 配置约束参数（属性、基数值、限制类）
+
+## 💡 在线验证
+
+以下链接可将本节的 Turtle 代码粘贴到在线 RDF 验证器中进行语法检查：
+
+- [Virtuoso Online SPARQL Editor](https://virtuoso.openlinksw.com/dataspace/dav/wiki/Open/VOS/WebQueryEditor/)
+- [RDFg — Turtle Editor & Validator](https://rdfg.org/)
+- [Turtle Validator Online](https://sem robot.net/turtle-validator/)
+
+**使用方式**：
+1. 复制上方的任意一个 Turtle 代码块
+2. 粘贴到上述任意一个验证器的输入框中
+3. 点击"Parse"或"Validate"按钮
+4. 若解析成功则说明语法符合 W3C RDF 1.1 规范

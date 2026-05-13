@@ -250,7 +250,53 @@ java -jar jena-shacl.jar \
     --shacl
 ```
 
-### 5.2 Java 编程方式
+### 5.2 前置准备：添加 Jena SHACL 依赖
+
+在编写 Java 代码之前，需要先配置好项目依赖。
+
+#### Maven 配置
+
+```xml
+<!-- Jena SHACL 核心依赖 -->
+<dependency>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena-shacl</artifactId>
+    <version>4.10.0</version>
+</dependency>
+<!-- Jena 核心库 -->
+<dependency>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena-core</artifactId>
+    <version>4.10.0</version>
+</dependency>
+<!-- Jena 本体库 -->
+<dependency>
+    <groupId>org.apache.jena</groupId>
+    <artifactId>jena-ontology</artifactId>
+    <version>4.10.0</version>
+</dependency>
+<!--  HermiT 推理机 -->
+<dependency>
+    <groupId>de.fuberlin.wmi</groupId>
+    <artifactId>hermite-reasoner</artifactId>
+    <version>2.0.0</version>
+</dependency>
+```
+
+#### Gradle 配置
+
+```groovy
+// Jena SHACL 核心依赖
+implementation 'org.apache.jena:jena-shacl:4.10.0'
+// Jena 核心库
+implementation 'org.apache.jena:jena-core:4.10.0'
+// Jena 本体库
+implementation 'org.apache.jena:jena-ontology:4.10.0'
+// HermiT 推理机
+implementation 'de.fuberlin.wmi:hermite-reasoner:2.0.0'
+```
+
+### 5.3 Java 编程方式
 
 ```java
 import org.apache.jena.shacl.SHAACLGraph ;

@@ -426,3 +426,256 @@ WHERE {
     :hasTitle "Inception" ;
     :releaseYear 2010 ;
     :directedBy :ChristopherNolan .
+
+---
+
+## Turtle 最终对照源码
+
+以下是本练习完整电影本体的 Turtle 源码，整合了类定义、属性声明、约束与个体实例。
+
+```turtle
+# 电影本体 (Movie Ontology)
+# 描述: 一个用于电影、演员和导演的简单本体示例
+
+@prefix :        <http://example.org/movie-ontology#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+# === 本体声明 ===
+:movie-ontology
+    a owl:Ontology ;
+    owl:versionInfo "1.0.0" ;
+    rdfs:label "Movie Ontology"@en .
+
+# === 类 (Classes) 定义 ===
+
+# 人物类
+:Person
+    a owl:Class ;
+    rdfs:label "人物"@zh .
+
+# 电影类
+:Movie
+    a owl:Class ;
+    rdfs:label "电影"@zh .
+
+# 演员类 - 人物的子类
+:Actor
+    a owl:Class ;
+    rdfs:subClassOf :Person ;
+    rdfs:label "演员"@zh .
+
+# 导演类 - 人物的子类
+:Director
+    a owl:Class ;
+    rdfs:subClassOf :Person ;
+    rdfs:label "导演"@zh .
+
+# 制片人类 - 人物的子类
+:Producer
+    a owl:Class ;
+    rdfs:subClassOf :Person ;
+    rdfs:label "制片人"@zh .
+
+# 作曲家类 - 人物的子类
+:Composer
+    a owl:Class ;
+    rdfs:subClassOf :Person ;
+    rdfs:label "作曲家"@zh .
+
+# 不相交类约束：演员、导演、制片人是互斥的
+:Actor owl:disjointWith :Director, :Producer, :Composer .
+:Director owl:disjointWith :Producer, :Composer .
+:Producer owl:disjointWith :Composer .
+
+# === 对象属性 (Object Properties) 定义 ===
+
+# 参演属性：演员 → 电影
+:actsIn
+    a owl:ObjectProperty ;
+    rdfs:label "参演"@zh ;
+    rdfs:comment "演员出演的电影"@en ;
+    rdfs:domain :Actor ;
+    rdfs:range :Movie .
+
+# 导演属性：电影 → 导演
+:directedBy
+    a owl:ObjectProperty ;
+    rdfs:label "导演"@zh ;
+    rdfs:comment "电影的导演"@en ;
+    rdfs:domain :Movie ;
+    rdfs:range :Director .
+
+# 制片人属性：电影 → 制片人
+:producedBy
+    a owl:ObjectProperty ;
+    rdfs:label "制片人"@zh ;
+    rdfs:domain :Movie ;
+    rdfs:range :Producer .
+
+# 配乐属性：电影 → 作曲家
+:scoreBy
+    a owl:ObjectProperty ;
+    rdfs:label "配乐"@zh ;
+    rdfs:domain :Movie ;
+    rdfs:range :Composer .
+
+# 合作属性：人与人（对称属性）
+:collaboratedWith
+    a owl:ObjectProperty ;
+    rdfs:label "合作过"@zh ;
+    rdfs:domain :Person ;
+    rdfs:range :Person .
+
+# 合作属性为对称属性
+:collaboratedWith a owl:SymmetricProperty .
+
+# === 数据属性 (Data Properties) 定义 ===
+
+# 姓名：人物
+:hasName
+    a owl:DatatypeProperty ;
+    rdfs:label "姓名"@zh ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+# 电影标题
+:hasTitle
+    a owl:DatatypeProperty ;
+    rdfs:label "标题"@zh ;
+    rdfs:domain :Movie ;
+    rdfs:range xsd:string .
+
+# 发行年份
+:releaseYear
+    a owl:DatatypeProperty ;
+    rdfs:label "发行年份"@zh ;
+    rdfs:domain :Movie ;
+    rdfs:range xsd:integer .
+
+# 个人简介
+:hasBiography
+    a owl:DatatypeProperty ;
+    rdfs:label "个人简介"@zh ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:string .
+
+# IMDb 评分
+:imdbRating
+    a owl:DatatypeProperty ;
+    rdfs:label "IMDb 评分"@zh ;
+    rdfs:domain :Movie ;
+    rdfs:range xsd:decimal .
+
+# 出生日期
+:hasBirthDate
+    a owl:DatatypeProperty ;
+    rdfs:label "出生日期"@zh ;
+    rdfs:domain :Person ;
+    rdfs:range xsd:date .
+
+# === 属性约束 (Property Constraints) ===
+
+# 约束 1: 每部电影必须有至少一位导演
+:Movie
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty :directedBy ;
+        owl:minQualifiedCardinality 1 ^^ :Director
+    ] .
+
+# 约束 2: 每个人必须至少有一个名称
+:Person
+    owl:equivalentClass [
+        a owl:Restriction ;
+        owl:onProperty :hasName ;
+        owl:minQualifiedCardinality 1 ^^ xsd:string
+    ] .
+
+# 约束 3: 电影标题是函数性属性
+:hasTitle a owl:FunctionalProperty .
+
+# 约束 4: IMDb 评分是函数性属性
+:imdbRating a owl:FunctionalProperty .
+
+# === 个体实例 (Individuals) ===
+
+# ---- 人物实例 ----
+
+:ChristopherNolan
+    a :Director ;
+    :hasName "Christopher Nolan" ;
+    :hasBirthDate "1970-07-19"^^xsd:date ;
+    :hasBiography "英国裔美国电影导演"@zh .
+
+:HansZimmer
+    a :Composer ;
+    :hasName "Hans Zimmer" ;
+    :hasBirthDate "1957-09-12"^^xsd:date ;
+    :hasBiography "德国电影配乐作曲家"@zh .
+
+:TomHanks
+    a :Actor ;
+    :hasName "Tom Hanks" ;
+    :hasBirthDate "1956-07-09"^^xsd:date .
+
+:LeonardoDiCaprio
+    a :Actor ;
+    :hasName "Leonardo DiCaprio" ;
+    :hasBirthDate "1974-11-11"^^xsd:date .
+
+# ---- 电影实例 ----
+
+:Inception
+    a :Movie ;
+    :hasTitle "Inception" ;
+    :hasTitle "盗梦空间"@zh ;
+    :releaseYear 2010 ;
+    :imdbRating 8.8 ;
+    :directedBy :ChristopherNolan ;
+    :scoreBy :HansZimmer .
+
+:Interstellar
+    a :Movie ;
+    :hasTitle "Interstellar" ;
+    :hasTitle "星际穿越"@zh ;
+    :releaseYear 2014 ;
+    :imdbRating 8.6 ;
+    :directedBy :ChristopherNolan ;
+    :scoreBy :HansZimmer .
+
+:TheGreenMile
+    a :Movie ;
+    :hasTitle "The Green Mile" ;
+    :hasTitle "绿里奇迹"@zh ;
+    :releaseYear 1999 ;
+    :imdbRating 8.6 .
+
+# ---- 关系断言 ----
+
+:TomHanks :actsIn :TheGreenMile .
+:ChristopherNolan :collaboratedWith :HansZimmer .
+
+# === 推理预期结果 ===
+# 1. 类层次推理：:TomHanks 被分类为 :Person
+# 2. 对称性推理：已知 :A :collaboratedWith :B ⇒ :B :collaboratedWith :A
+# 3. 约束验证：每部电影至少有导演 — 违反时标记不一致
+```
+
+---
+
+### 使用指南
+
+1. **导入到 Protégé**：
+   - 点击 **File → Import → RDF/Turtle Graph**
+   - 选择保存的 `.ttl` 文件
+
+2. **运行推理**：
+   - 点击 **Tools → HermiT Reasoner → Run Reasoner**
+   - 确认输出为 `consistent`
+
+3. **扩展建议**：
+   - 添加 `Genre`（类型）类和 `hasGenre` 属性
+   - 定义更复杂的属性链：`actsIn o actedInInverse → collaboratedWith`

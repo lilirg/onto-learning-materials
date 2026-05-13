@@ -4,6 +4,20 @@
 
 ---
 
+### 🔗 前置知识
+
+在继续学习本章之前，建议先阅读以下内容：
+
+- [第 11 章：OWL 2 属性公理](../ch11-owl2-property-axioms/index.md) — 属性定义与约束
+- [第 12 章：OWL 2 数据约束](../ch12-owl2-data-constraints/index.md) — 基数约束与值约束
+
+### ▶️ 继续阅读
+
+学习完本章后，可继续探索：
+
+- [第 14.2 节：形状定义](./02-shape-definition.md) — 定义形状、目标与约束
+- [第 16 章：开发生命周期](../ch16-development-lifecycle/index.md) — 本体的工程化开发流程
+
 ## 1. SHACL 的定义与标准化历程
 
 **SHACL**（Shapes Constraint Language，形状约束语言）是 W3C 推荐的 **RDF 数据验证标准语言**，用于描述 RDF 图（RDF Graph）的结构约束，并报告验证结果。
