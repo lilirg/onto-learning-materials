@@ -64,22 +64,22 @@ features:
 <div class="quick-start">
   <h2 class="section-title">🚀 快速开始</h2>
   <div class="quick-grid">
-    <a href="/ch01-what-is-ontology/01-overview" class="quick-card">
+    <a href="ch01-what-is-ontology/01-overview" class="quick-card">
       <span class="quick-number">01</span>
       <h3>理论基石</h3>
       <p>从哲学基础到本体概念，建立系统性认知</p>
     </a>
-    <a href="/ch04-rdf-data-model/01-rdf-introduction" class="quick-card">
+    <a href="ch04-rdf-data-model/01-rdf-introduction" class="quick-card">
       <span class="quick-number">02</span>
       <h3>RDF 数据模型</h3>
       <p>掌握语义网的数据基石，理解三元组结构</p>
     </a>
-    <a href="/ch08-owl2-overview/01-why-owl2" class="quick-card">
+    <a href="ch08-owl2-overview/01-why-owl2" class="quick-card">
       <span class="quick-number">03</span>
       <h3>OWL 2 核心</h3>
       <p>深入学习描述逻辑与本体建模语言</p>
     </a>
-    <a href="/ch13-sparql-query/01-sparql-introduction" class="quick-card">
+    <a href="ch13-sparql-query/01-sparql-introduction" class="quick-card">
       <span class="quick-number">04</span>
       <h3>查询与推理</h3>
       <p>掌握 SPARQL 查询与推理验证技术</p>
@@ -121,9 +121,9 @@ features:
   <div class="module-icon">🧠</div>
   <p class="module-desc">理解"什么是知识"和"如何对世界进行分类"，奠定本体工程的思想根基。</p>
   <div class="module-links">
-  <a href="/ch01-what-is-ontology/01-overview">第 1 章：什么是本体</a>
-  <a href="/ch02-philosophy-conceptualization/01-philosophical-roots">第 2 章：哲学渊源</a>
-  <a href="/ch03-core-concepts/01-elements">第 3 章：核心概念</a>
+  <a href="ch01-what-is-ontology/01-overview">第 1 章：什么是本体</a>
+  <a href="ch02-philosophy-conceptualization/01-philosophical-roots">第 2 章：哲学渊源</a>
+  <a href="ch03-core-concepts/01-elements">第 3 章：核心概念</a>
   </div>
   </div>
 
@@ -133,8 +133,8 @@ features:
   <div class="module-icon">🔗</div>
   <p class="module-desc">RDF 是语义网的数据基石，系统讲解如何描述和建模知识。</p>
   <div class="module-links">
-  <a href="/ch04-rdf-data-model/01-rdf-introduction">第 4 章：RDF 数据模型</a>
-  <a href="/ch05-rdf-syntax/01-serialization-overview">第 5 章：RDF 语法格式</a>
+  <a href="ch04-rdf-data-model/01-rdf-introduction">第 4 章：RDF 数据模型</a>
+  <a href="ch05-rdf-syntax/01-serialization-overview">第 5 章：RDF 语法格式</a>
   </div>
   </div>
 
@@ -144,8 +144,8 @@ features:
   <div class="module-icon">📋</div>
   <p class="module-desc">在 RDF 基础上构建层次和词汇体系，掌握分类与标签管理。</p>
   <div class="module-links">
-  <a href="/ch06-rdfs-core/01-rdf-vocabulary">第 6 章：RDFS 核心概念</a>
-  <a href="/ch07-skos-vocabulary/01-skos-introduction">第 7 章：SKOS 词汇构造</a>
+  <a href="ch06-rdfs-core/01-rdf-vocabulary">第 6 章：RDFS 核心概念</a>
+  <a href="ch07-skos-vocabulary/01-skos-introduction">第 7 章：SKOS 词汇构造</a>
   </div>
   </div>
 
@@ -155,11 +155,11 @@ features:
   <div class="module-icon">🏗️</div>
   <p class="module-desc">OWL 2 是最强大的语义网本体语言。深入描述逻辑、公理系统与建模技巧。</p>
   <div class="module-links">
-  <a href="/ch08-owl2-overview/01-why-owl2">第 8 章：OWL 2 概述</a>
-  <a href="/ch09-protoge-intro/01-protoge-introduction">第 9 章：Protégé 入门</a>
-  <a href="/ch10-owl2-class-modeling/01-class-expressions">第 10 章：类建模</a>
-  <a href="/ch11-owl2-property-axioms/01-object-data-properties">第 11 章：属性公理</a>
-  <a href="/ch12-owl2-data-constraints/01-cardinality-constraints">第 12 章：数据约束</a>
+  <a href="ch08-owl2-overview/01-why-owl2">第 8 章：OWL 2 概述</a>
+  <a href="ch09-protoge-intro/01-protoge-introduction">第 9 章：Protégé 入门</a>
+  <a href="ch10-owl2-class-modeling/01-class-expressions">第 10 章：类建模</a>
+  <a href="ch11-owl2-property-axioms/01-object-data-properties">第 11 章：属性公理</a>
+  <a href="ch12-owl2-data-constraints/01-cardinality-constraints">第 12 章：数据约束</a>
   </div>
   </div>
 
@@ -169,9 +169,9 @@ features:
   <div class="module-icon">🔎</div>
   <p class="module-desc">学习查询语言和验证机制，提取及确保知识质量。</p>
   <div class="module-links">
-  <a href="/ch13-sparql-query/01-sparql-introduction">第 13 章：SPARQL 查询</a>
-  <a href="/ch14-shacl-validation/01-shacl-introduction">第 14 章：SHACL 验证</a>
-  <a href="/ch15-reasoning-consistency/01-reasoning-basics">第 15 章：推理与一致性</a>
+  <a href="ch13-sparql-query/01-sparql-introduction">第 13 章：SPARQL 查询</a>
+  <a href="ch14-shacl-validation/01-shacl-introduction">第 14 章：SHACL 验证</a>
+  <a href="ch15-reasoning-consistency/01-reasoning-basics">第 15 章：推理与一致性</a>
   </div>
   </div>
 
@@ -181,9 +181,9 @@ features:
   <div class="module-icon">⚙️</div>
   <p class="module-desc">关注本体开发的工程化方法论、质量保障与实践流程。</p>
   <div class="module-links">
-  <a href="/ch16-development-lifecycle/01-lifecycle-phases">第 16 章：开发生命周期</a>
-  <a href="/ch17-methodologies-comparison/01-methontology">第 17 章：方法论</a>
-  <a href="/ch18-quality-assessment/01-evaluation-dimensions">第 18 章：质量评估</a>
+  <a href="ch16-development-lifecycle/01-lifecycle-phases">第 16 章：开发生命周期</a>
+  <a href="ch17-methodologies-comparison/01-methontology">第 17 章：方法论</a>
+  <a href="ch18-quality-assessment/01-evaluation-dimensions">第 18 章：质量评估</a>
   </div>
   </div>
 
@@ -193,9 +193,9 @@ features:
   <div class="module-icon">🌐</div>
   <p class="module-desc">了解本体在实际领域中的应用实践以及工具全景。</p>
   <div class="module-links">
-  <a href="/ch19-mainstream-ontologies/01-upper-ontologies">第 19 章：主流本体</a>
-  <a href="/ch20-application-scenarios/01-biomedicine">第 20 章：应用场景</a>
-  <a href="/ch21-tool-ecosystem/01-editors">第 21 章：工具生态</a>
+  <a href="ch19-mainstream-ontologies/01-upper-ontologies">第 19 章：主流本体</a>
+  <a href="ch20-application-scenarios/01-biomedicine">第 20 章：应用场景</a>
+  <a href="ch21-tool-ecosystem/01-editors">第 21 章：工具生态</a>
   </div>
   </div>
 
@@ -205,8 +205,8 @@ features:
   <div class="module-icon">🚀</div>
   <p class="module-desc">深入学习本体对齐、融合及神经符号 AI 前沿话题。</p>
   <div class="module-links">
-  <a href="/ch22-ontology-alignment/01-concepts">第 22 章：本体对齐</a>
-  <a href="/ch23-neuro-symbolic-ai/01-symbolic-Neuro-comparison">第 23 章：神经符号 AI</a>
+  <a href="ch22-ontology-alignment/01-concepts">第 22 章：本体对齐</a>
+  <a href="ch23-neuro-symbolic-ai/01-symbolic-Neuro-comparison">第 23 章：神经符号 AI</a>
   </div>
   </div>
   </div>
@@ -219,37 +219,37 @@ features:
   <div class="appendix-card">
   <h4>附录 A</h4>
   <p>OWL 2 属性速查表</p>
-  <a href="/appendix-a-owl2-reference">查看 →</a>
+  <a href="appendix-a-owl2-reference">查看 →</a>
   </div>
   <div class="appendix-card">
   <h4>附录 B</h4>
   <p>Protégé 常用快捷键</p>
-  <a href="/appendix-b-protoge-shortcuts">查看 →</a>
+  <a href="appendix-b-protoge-shortcuts">查看 →</a>
   </div>
   <div class="appendix-card">
   <h4>附录 C</h4>
   <p>常用本体仓库</p>
-  <a href="/appendix-c-repositories">查看 →</a>
+  <a href="appendix-c-repositories">查看 →</a>
   </div>
   <div class="appendix-card">
   <h4>附录 D</h4>
   <p>RDF/XML 与 Turtle 对照</p>
-  <a href="/appendix-d-rdf-syntax-comparison">查看 →</a>
+  <a href="appendix-d-rdf-syntax-comparison">查看 →</a>
   </div>
   <div class="appendix-card">
   <h4>附录 E</h4>
   <p>Pizza Ontology 教程</p>
-  <a href="/appendix-e-pizza-tutorial">查看 →</a>
+  <a href="appendix-e-pizza-tutorial">查看 →</a>
   </div>
   <div class="appendix-card">
   <h4>附录 F</h4>
   <p>Protégé 资源索引</p>
-  <a href="/appendix-f-protege-resources">查看 →</a>
+  <a href="appendix-f-protege-resources">查看 →</a>
   </div>
   <div class="appendix-card">
   <h4>附录 G</h4>
   <p>术语中英对照表</p>
-  <a href="/appendix-g-glossary">查看 →</a>
+  <a href="appendix-g-glossary">查看 →</a>
   </div>
   </div>
 </div>
