@@ -328,8 +328,8 @@ features:
   color: var(--vp-c-text-1);
   margin: 3rem 0 1.5rem;
   padding-bottom: 0.75rem;
+  border-top: none;
   border-bottom: 2px solid var(--vp-c-divider);
-  text-align: center;
 }
 
 .section-desc {
@@ -460,11 +460,8 @@ features:
 
 /* 课程地图 */
 .course-map {
-  background: var(--vp-c-bg-soft);
-  border-radius: 12px;
-  padding: 2rem;
+  padding: 2rem 0;
   margin: 2rem 0;
-  border: 1px solid var(--vp-c-divider);
 }
 
 /* 模块网格 */

@@ -435,7 +435,7 @@ export default withMermaid({
       ],
     },
     footer: {
-      message: '采用 MIT 许可证发布',
+      message: '采用 CC0 1.0 Universal 许可证发布',
       copyright: 'Copyright © 2026 Ontology Learning Materials',
     },
   },
